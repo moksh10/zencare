@@ -1,0 +1,166 @@
+.landing-header {
+  margin-top: 1vmin;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 13vmin;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 7vmin;
+}
+.landing-header > div:nth-child(odd) {
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 7vmin;
+  letter-spacing: 0.2vmin;
+  font-family: "Comfortaa", cursive;
+}
+.landing-header > div:nth-child(even) {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-header > div > button {
+  height: 55%;
+  letter-spacing: 0.2vmin;
+  font-size: 2.8vmin;
+  text-align: center;
+  padding: 2vmin;
+  border-radius: 0.75vmin;
+  border: 0;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+  background-color: var(--blue);
+  transition: all 0.15s ease-in-out;
+  color: white;
+}
+.landing-header > div > button:hover {
+  transform: scale(1.05, 1.05);
+  opacity: 0.6;
+}
+.landing-body {
+  display: flex;
+  width: 100%;
+  height: 60vmin;
+  justify-content: space-evenly;
+  margin-bottom: 15vmin;
+}
+.landing-body > div:nth-child(odd) {
+  width: 50%;
+}
+.landing-body > div:nth-child(even) {
+  width: 40%;
+  font-size: 5vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Comfortaa", cursive;
+  align-items: center;
+  padding-top: 9vmin;
+  padding-left: 1vmin;
+}
+.landing-body > div:nth-child(even) > div:nth-child(odd) {
+  font-size: 5vmin;
+  height: 40%;
+  margin-top: 5vmin;
+  width: 100%;
+}
+.landing-body > div:nth-child(even) > div:nth-child(even) {
+  font-size: 2.5vmin;
+  height: 50%;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+}
+.landing-body > div:nth-child(even) > div:nth-child(even) > button {
+  background-color: var(--blue);
+  border: 0;
+  cursor: pointer;
+  border-radius: 0.7vmin;
+  font-size: 2.75vmin;
+  padding: 2.5vmin;
+  color: white;
+  transition: all 0.15s ease-in-out;
+  letter-spacing: 0.1vmin;
+}
+.landing-body > div:nth-child(even) > div:nth-child(even) > button:hover {
+  opacity: 0.6;
+  transform: scale(1.04, 1.04);
+}
+.landing-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vmin;
+}
+.landing-about > .landing-features-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.landing-about > div:first-child {
+  font-size: 5.5vmin;
+  font-weight: bold;
+  display: flex;
+  max-width: 50%;
+  margin-bottom: 8vmin;
+  line-height: 1.2;
+  text-align: center;
+}
+.landing-features-box {
+  display: flex;
+  max-width: 50%;
+  flex-wrap: wrap;
+  font-family: "Open Sans", sans-serif;
+}
+.landing-features-box > div {
+  width: 42%;
+  text-align: center;
+}
+.landing-features-box > div > h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 4vmin;
+}
+
+.landing-features-box > div > .landing-feature-info {
+  max-width: 100%;
+  padding: 1.75vmin;
+  text-align: center;
+  letter-spacing: 0.1vmin;
+  font-size: 2.5vmin;
+}
+.landing-footer {
+  background-color: #272728;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  width: 100%;
+}
+.landing-footer > div {
+  display: flex;
+  width: 50%;
+  padding: 5vmin;
+  font-size: 3.2vmin;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing-footer > div > div:first-child {
+  padding: 1vmin;
+  font-size: 4.3vmin;
+}
+.landing-footer > div > address {
+  width: 40%;
+  padding-top: 1vmin;
+  font-size: 3.5vmin;
+}
