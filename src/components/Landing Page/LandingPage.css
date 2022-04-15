@@ -1,5 +1,9 @@
+.landing-container
+{
+  background-color: rgb(31, 33, 35);
+  
+}
 .landing-header {
-  margin-top: 1vmin;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -30,10 +34,9 @@
 
 .landing-header > div > button {
   height: 55%;
-  letter-spacing: 0.2vmin;
   font-size: 2.8vmin;
   text-align: center;
-  padding: 2vmin;
+  padding: 1.5vmin;
   border-radius: 0.75vmin;
   border: 0;
   font-family: "Open Sans", sans-serif;
@@ -54,14 +57,14 @@
   margin-bottom: 15vmin;
 }
 .landing-body > div:nth-child(odd) {
-  width: 50%;
+  width: 51%;
 }
 .landing-body > div:nth-child(even) {
   width: 40%;
-  font-size: 5vmin;
+  font-size: 4.75vmin;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   font-family: "Comfortaa", cursive;
   align-items: center;
   padding-top: 9vmin;
@@ -75,21 +78,21 @@
 }
 .landing-body > div:nth-child(even) > div:nth-child(even) {
   font-size: 2.5vmin;
-  height: 50%;
+  height: 40%;
   width: 100%;
+  margin-top: 1vmin;
   justify-content: center;
   align-items: flex-start;
 }
 .landing-body > div:nth-child(even) > div:nth-child(even) > button {
   background-color: var(--blue);
   border: 0;
+  color:white;
   cursor: pointer;
   border-radius: 0.7vmin;
   font-size: 2.75vmin;
-  padding: 2.5vmin;
-  color: white;
+  padding: 1.25vmin;
   transition: all 0.15s ease-in-out;
-  letter-spacing: 0.1vmin;
 }
 .landing-body > div:nth-child(even) > div:nth-child(even) > button:hover {
   opacity: 0.6;

@@ -1,6 +1,7 @@
 * {
   color: rgba(245, 245, 245, 0.788);
   box-sizing: border-box;
+  letter-spacing:.080vmin;
 }
 :root {
   --blue: #0058dd;
@@ -10,16 +11,13 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:active,
 input:-webkit-autofill:focus {
-  background-color: rgb(58, 58, 58) !important;
-  color: rgb(82, 82, 82) !important;
-  box-shadow: 0 0 0 1000px rgb(68, 68, 68) inset;
-  -webkit-box-shadow: 0 0 0 1000px rgb(68, 68, 68) inset !important;
-  -webkit-text-fill-color: white !important;
+    background-color: rgb(58, 58, 58) !important;
+    color: rgb(82, 82, 82) !important;
+    box-shadow: 0 0 0 1000px rgb(68, 68, 68) inset;
+    -webkit-box-shadow: 0 0 0 1000px rgb(68, 68, 68) inset !important;
+    -webkit-text-fill-color: white !important;
+   
 }
-
-/* :root {
-
-} */
 
 html {
   scroll-behavior: smooth;
@@ -48,10 +46,8 @@ html {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
   font-family: "Comfortaa", cursive;
-  background-color: rgb(31, 33, 35);
-  letter-spacing: 0.1vmin;
+
 }

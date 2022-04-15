@@ -1,0 +1,23 @@
+.inputBox
+{
+    outline:0;
+    background-color:transparent;
+    color:rgba(203, 203, 203, 0.812);
+    font-size: 2.75vmin;
+    padding:1.5vmin;
+    border: .5px solid rgb(169, 169, 169);
+    border-radius:0.5vmin;
+    transition:all .37s ease-in-out
+
+}
+.inputBox:focus
+{
+    outline:0;
+    background-color:transparent;
+    color:rgba(203, 203, 203, 0.812);
+    font-size: 2.75vmin;
+    padding:1.5vmin;
+    border: .8px solid rgb(53, 83, 182);
+    border-radius:0.5vmin;
+
+}

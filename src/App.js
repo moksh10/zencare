@@ -2,7 +2,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./App.css";
 import LandingPage from "./components/Landing Page/LandingPage.js";
-import Loading from "./components/Loading/Loading.js";
+// import Loading from "./components/Loading/Loading.js";
+import LoginPage from "./components/Login Page/LoginPage.js";
 AOS.init({
   offset: 120,
   delay: 0,
@@ -12,10 +13,11 @@ AOS.init({
 });
 AOS.refresh();
 function App() {
+  //const landingPage=<LandingPage />
+  //const loading=<Loading />
   return (
     <>
-      <LandingPage />
-      <Loading />
+    <LoginPage/>
     </>
   );
 }

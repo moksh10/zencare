@@ -1,4 +1,4 @@
-import { ReactComponent as LandingPageBackground } from "./../../media/landingPageBackground.svg";
+import { ReactComponent as LandingPageBackground } from "./../../assets/images/landingPageBackground.svg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeartPulse,
@@ -11,7 +11,7 @@ function LandingPage() {
   const locationIcon = <FontAwesomeIcon icon={faLocationPin} />;
   const contactIcon = <FontAwesomeIcon icon={faUser} />;
   return (
-    <>
+    <div className="landing-container">
       <div className="landing-header" data-aos="fade-down">
         <div>
           <div>{logoIcon}</div>
@@ -107,7 +107,7 @@ function LandingPage() {
           <div>Email: zencare129@gmail.com</div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default LandingPage;
