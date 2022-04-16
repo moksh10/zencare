@@ -1,4 +1,5 @@
 import InputBox from "../Generic/InputBox/InputBox";
+import Button from "../Generic/Button/Button";
 import './loginPage.css'
 function LoginPage() {
   return (
@@ -31,7 +32,7 @@ function LoginPage() {
         <input type="radio" value="ADMIN" name="role" />
         <label>Admin</label>
         </div>
-        <button className="signIn">SIGN IN</button>
+        <Button value="SIGN IN" type="blue"/>
         <div>
           Don't have an account? <span>Sign Up</span>
         </div>

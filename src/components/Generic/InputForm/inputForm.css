@@ -1,0 +1,56 @@
+.input-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #191c24;
+  border-radius: 0.6vmin;
+  padding:4vmin;
+  margin: 2vmin;
+}
+.input-form > h1 {
+  font-size: 3.5vmin;
+  color: white;
+}
+.input-form > p {
+  font-size: 2.1vmin;
+}
+.input-form-boxes {
+
+  margin-top: 2vmin;
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+}
+.input-form-boxes > div {
+  width: 40%;
+  font-size: 2vmin;
+  margin-bottom: 3vmin;
+  height:100%;
+}
+.div-label {
+  font-size:2.25vmin;
+  margin-bottom:.1vmin;
+}
+.div-disabled
+{
+  color:rgb(202, 202, 202);
+  font-size:3.15vmin;
+  margin-bottom:.3vmin;
+}
+
+.input-form-buttons {
+  height: 10%;
+  margin-top: 4vmin;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content:space-evenly;
+}
+.input-form-buttons > div {
+  height: 100%;
+}

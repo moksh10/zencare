@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(0, 0, 0);
-  font-family: Helvetica, sans-serif;
+  font-family: "Rubik", sans-serif;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     150deg,
@@ -15,25 +15,26 @@
   );
 }
 .login-container {
-  background-color: #191c24;
+  background-color: #101217;
   display: flex;
   border-radius: 0.5vmin;
   flex-direction: column;
   padding: 5vmin 12vmin 8vmin 12vmin;
 }
 .login-container > h1 {
-  font-size: 6vmin;
-  margin: 1vmin 7vmin 4vmin 0;
+  font-size: 6.4vmin;
+  font-family: "Comfortaa", cursive;
+  margin: 1.2vmin 7vmin 4.1vmin 0;
+  letter-spacing: 0;
 }
 .login-container > b {
-  font-size: 2.5vmin;
+  font-size: 2.9vmin;
 }
 .login-container > p {
-  font-size: 2.3vmin;
+  font-size: 2.7vmin;
   margin-bottom: 5vmin;
 }
-.login-container > input[type="text"],
-input[type="password"] {
+.login-container > input {
   display: block;
   width: 40vmin;
   margin: 0 4vmin 3vmin 0;
@@ -53,23 +54,11 @@ input[type="password"] {
   margin-right: 3vmin;
 }
 
-.login-container > button {
-  background-color: var(--blue);
-  border: 0;
-  color: white;
-  cursor: pointer;
-  width: 90%;
-  border-radius: 0.7vmin;
-  font-size: 2.6vmin;
-  padding: 1.25vmin;
-  transition: all 0.15s ease-in-out;
-  margin-bottom: 2vmin;
-}
-.login-container > button:hover {
-  opacity: 0.6;
-  transform: scale(1.04, 1.04);
-}
 .login-container > div:last-child {
-  margin: 1vmin;
+  margin: 1.5vmin;
   font-size: 2.25vmin;
+}
+.login-container > div:last-child > span {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
 }

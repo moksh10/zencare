@@ -1,0 +1,59 @@
+.button-red,
+.button-green,
+.button-blue,
+.button-purple,
+.button-yellow {
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 550;
+  border-radius: 0.4vmin;
+  font-size: 2.4vmin;
+  padding: 1.3vmin;
+  border: 0.2vmin solid white;
+  transition: all .25s linear;
+  margin-bottom: .5vmin;
+}
+.button-red {
+  color: #fc424a;
+  border-color: #fc424a;
+}
+.button-blue {
+  color: #0090e7;
+  border-color: #0090e7;
+}
+.button-yellow {
+  color: #ffab00;
+  border-color: #ffab00;
+}
+.button-purple {
+  color: #8f5fe8;
+  border-color: #8f5fe8;
+}
+.button-green {
+  color: #00d25b;
+  border-color: #00d25b;
+}
+.button-red:hover {
+  color: white;
+  background-color: #fc424a;
+}
+.button-blue:hover {
+  color: white;
+  background-color: #0090e7;
+}
+.button-yellow:hover {
+  color: black;
+  background-color: #ffab00;
+}
+.button-purple:hover {
+  color: #ffffff;
+  background-color: #8f5fe8;
+}
+.button-green:hover {
+  color: #ffffff;
+  background-color: #00d25b;
+}
+.button-diabled {
+  color: grey;
+  border-color: grey;
+}

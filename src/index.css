@@ -1,6 +1,6 @@
 * {
-  color: rgba(245, 245, 245, 0.788);
   box-sizing: border-box;
+  color:#747a9e;
   letter-spacing:.080vmin;
 }
 :root {
@@ -41,13 +41,13 @@ html {
 }
 
 ::selection {
-  background-color: rgb(179, 179, 179);
+  background-color: rgb(88, 82, 150);
   color: rgb(26, 26, 26);
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Comfortaa", cursive;
+  font-family: 'Rubik', sans-serif;
 
 }

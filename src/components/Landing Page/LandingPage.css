@@ -1,7 +1,5 @@
-.landing-container
-{
-  background-color: rgb(31, 33, 35);
-  
+.landing-container {
+  background-color: #101217;
 }
 .landing-header {
   width: 100%;
@@ -57,10 +55,10 @@
   margin-bottom: 15vmin;
 }
 .landing-body > div:nth-child(odd) {
-  width: 51%;
+  width: 50%;
 }
 .landing-body > div:nth-child(even) {
-  width: 40%;
+  width: 41%;
   font-size: 4.75vmin;
   display: flex;
   flex-direction: column;
@@ -68,7 +66,7 @@
   font-family: "Comfortaa", cursive;
   align-items: center;
   padding-top: 9vmin;
-  padding-left: 1vmin;
+  padding-left: .8vmin;
 }
 .landing-body > div:nth-child(even) > div:nth-child(odd) {
   font-size: 5vmin;
@@ -87,11 +85,11 @@
 .landing-body > div:nth-child(even) > div:nth-child(even) > button {
   background-color: var(--blue);
   border: 0;
-  color:white;
+  color: white;
   cursor: pointer;
   border-radius: 0.7vmin;
   font-size: 2.75vmin;
-  padding: 1.25vmin;
+  padding: 1.5vmin;
   transition: all 0.15s ease-in-out;
 }
 .landing-body > div:nth-child(even) > div:nth-child(even) > button:hover {

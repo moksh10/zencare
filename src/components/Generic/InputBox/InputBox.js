@@ -1,7 +1,7 @@
 import './InputBox.css'
-function InputBox({type,name,placeholder,value,handleInput,className})
+function InputBox({type,name,placeholder,value,handleInput,isDisabled})
 {
-    return (<input className={className?className:'inputBox'} type={type} name={name} placeholder={placeholder} value={value} onKeyUp={handleInput}  onPaste={handleInput}  onCut={handleInput} onInput={handleInput}  onChange={handleInput} />)
+    return (<input className="inputBox" type={type} name={name} placeholder={placeholder} onKeyUp={handleInput}  onPaste={handleInput}  onCut={handleInput} onInput={handleInput}  onChange={handleInput} disabled={isDisabled}/>)
                     
 
 }
