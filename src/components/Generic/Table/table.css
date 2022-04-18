@@ -1,0 +1,44 @@
+.table-container {
+  overflow-x: auto;
+}
+
+.custom-table {
+  border: 0;
+  background-color: transparent;
+  font-family: "Rubik", sans-serif;
+  border-spacing: 0;
+  width: 100%;
+}
+.custom-table th,
+td {
+  max-width: 20vw;
+  letter-spacing: 0;
+  border-bottom: 0.1vmin solid rgb(53, 53, 53);
+  text-align: left;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 3vmin;
+  cursor: pointer;
+  overflow-x: hidden;
+}
+.custom-table tbody > tr {
+  transition: all 0.2s linear;
+  
+}
+.custom-table tbody > tr:hover {
+  background-color: #323848;
+  transform: scale(1.01,1.01);
+}
+
+.custom-table th {
+  font-size: 2.4vmin;
+  font-weight: bold;
+}
+.custom-table td {
+  font-size: 2.1vmin;
+}
+.custom-table > tbody > tr > td > button {
+  font-size: 2.1vmin;
+}

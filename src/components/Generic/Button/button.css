@@ -5,13 +5,12 @@
 .button-yellow {
   background-color: transparent;
   cursor: pointer;
-  font-weight: 550;
   border-radius: 0.4vmin;
-  font-size: 2.4vmin;
+  font-size: 2.2vmin;
   padding: 1.3vmin;
   border: 0.2vmin solid white;
   transition: all .25s linear;
-  margin-bottom: .5vmin;
+  width:100%;
 }
 .button-red {
   color: #fc424a;

@@ -1,7 +1,5 @@
-import './button.css'
+import "./button.css";
 function Button({ value, handleClick, type, isDisabled }) {
- console.log(type)
- console.log(isDisabled)
   return (
     <button
       className={`button-${type}`}

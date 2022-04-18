@@ -1,0 +1,12 @@
+.input-form-buttons {
+  height: 10%;
+  margin-top: 4vmin;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.input-form-buttons > div {
+  height: 100%;
+}

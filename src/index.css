@@ -23,22 +23,21 @@ html {
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-  width: 1.5vmin;
-}
+ ::-webkit-scrollbar {
+  width:1vmin;
+  height: 1vmin;
+  }
 
 ::-webkit-scrollbar-track {
-  background: rgb(34, 34, 34);
+  background: rgb(73, 73, 143);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: grey;
+  background: rgb(224, 224, 224);
   border-radius: 0.4vmin;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
+
 
 ::selection {
   background-color: rgb(88, 82, 150);
