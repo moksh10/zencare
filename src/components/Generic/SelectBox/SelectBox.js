@@ -1,5 +1,5 @@
-import './selectbox.css'
-function SelectBox({ options }) {
+import "./selectbox.css";
+function SelectBox({ options = [] }) {
   return (
     <select>
       {options.map((option) => (

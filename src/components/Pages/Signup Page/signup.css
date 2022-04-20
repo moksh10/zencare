@@ -1,0 +1,19 @@
+.signup-body {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  font-family: "Rubik", sans-serif;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    150deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 19%,
+    rgba(2, 1, 25, 1) 100%
+  );
+}
+.signup-body > div {
+  margin: 4vmin;
+}

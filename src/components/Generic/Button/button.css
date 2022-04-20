@@ -9,8 +9,8 @@
   font-size: 2.2vmin;
   padding: 1.3vmin;
   border: 0.2vmin solid white;
-  transition: all .25s linear;
-  width:100%;
+  transition: all 0.25s linear;
+  width: 100%;
 }
 .button-red {
   color: #fc424a;

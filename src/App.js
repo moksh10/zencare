@@ -4,11 +4,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Container from "./components/Generic/Container/Container.js";
-import LandingPage from "./components/Landing Page/LandingPage.js";
-import Loading from "./components/Loading/Loading.js";
-import LoginPage from "./components/Login Page/LoginPage.js";
+import LandingPage from "./components/Pages/Landing Page/LandingPage.js";
+import Loading from "./components/Generic/Loading/Loading.js";
+import LoginPage from "./components/Pages/Login Page/LoginPage.js";
 import Header from "./components/Generic/Header/Header.js";
 import SideBar from "./components/Generic/SideBar/SideBar.js";
+import Signup from "./components/Pages/Signup Page/Signup.js"
 import {
   mdiAccountBox,
   mdiCalendar,
@@ -20,6 +21,7 @@ import {
   mdiTable,
   mdiAccountSupervisorOutline,
 } from "@mdi/js";
+import MainApp from "./components/Pages/MainApp Page/MainApp.js";
 AOS.init({
   offset: 120,
   delay: 0,
@@ -138,44 +140,27 @@ function App() {
         "Something is defuibj f duiaebk ffbiuaebkj fbfuik eaf ieaf iekafi eakf eyiafbieafbie fbeabfieaf aeifbiaebf ",
     },
   ];
-  const links = [
-    { value: "Profile", icon: mdiAccountBox, color: "#b6b6b6" },
-    { value: "Doctor", icon: mdiDoctor, color: "#00d25b" },
-    { value: "Patient", icon: mdiTable, color: "#ffab00" },
-    { value: "Admins", icon: mdiAccountSupervisorOutline, color: "#fc424a" },
-    { value: "Appointments", icon: mdiCalendar, color: "#ffab00" },
-    { value: "Medical Record", icon: mdiFile, color: "#0090e7" },
-    { value: "Add New Appointment", icon: mdiCalendarPlus, color: "#ffab00" },
-    { value: "Add New Medical Record", icon: mdiFilePlus, color: "#0090e7" },
-    { value: "Add New Doctor", icon: mdiPlusBox, color: "#00d25b" },
-    { value: "Add New Admin", icon: mdiPlusBox, color: "#fc424a" },
-  ];
-  const app = (
-    <Container
-      formHeading="Appointment"
-      formTitle="All Appointment"
-      inputBoxes={inputBoxes}
-      buttons={buttons}
-      textareas={textareas}
-      select={select}
-    />
-  );
-  const app2 = (
-    <>
-      <Header username="Moksh Teng" />
-      <div style={{ display: "flex" }}>
-        <SideBar links={links} />
-        {app}
-      </div>
-    </>
-  );
+
+  
   return (
     <>
-      {app2}
+    <MainApp />
       <ToastContainer limit={3} />
     </>
   );
 }
 
+export const links = [
+  { value: "Profile", icon: mdiAccountBox, color: "#b6b6b6" },
+  { value: "Doctor", icon: mdiDoctor, color: "#00d25b" },
+  { value: "Patient", icon: mdiTable, color: "#ffab00" },
+  { value: "Admins", icon: mdiAccountSupervisorOutline, color: "#fc424a" },
+  { value: "Appointments", icon: mdiCalendar, color: "#ffab00" },
+  { value: "Medical Record", icon: mdiFile, color: "#0090e7" },
+  { value: "Add New Appointment", icon: mdiCalendarPlus, color: "#ffab00" },
+  { value: "Add New Medical Record", icon: mdiFilePlus, color: "#0090e7" },
+  { value: "Add New Doctor", icon: mdiPlusBox, color: "#00d25b" },
+  { value: "Add New Admin", icon: mdiPlusBox, color: "#fc424a" },
+];
 export default App;
 // eslint-disable-next-line no-lone-blocks

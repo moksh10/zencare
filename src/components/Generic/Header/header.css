@@ -8,7 +8,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   position: fixed;
-  box-shadow: .1vmin .1vmin 10vmin .1vmin rgba(0, 0, 0, 0.542);
+  box-shadow: 0.1vmin 0.1vmin 10vmin 0.1vmin rgba(0, 0, 0, 0.499);
 }
 .app-header > div:nth-child(odd) {
   letter-spacing: 0.3vmin;

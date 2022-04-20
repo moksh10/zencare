@@ -3,7 +3,7 @@ import ButtonSection from "../ButtonSection/ButtonSection.js";
 import Table from "../Table/Table.js";
 import QuerySection from "../QuerySection/QuerySection.js";
 import "./container.css";
-function Container({ inputBoxes, buttons, textareas, formHeading, formTitle, select }) {
+function Container({ inputBoxes=[], buttons=[], textareas=[], formHeading=[], formTitle=[], select=[],tableData=[] }) {
   // const container = (
   //   <>
   //     <FormSection inputBoxes={inputBoxes} textareas={textareas} />

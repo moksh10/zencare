@@ -1,6 +1,6 @@
-import InputBox from "../Generic/InputBox/InputBox";
-import Button from "../Generic/Button/Button";
-import './loginPage.css'
+import InputBox from "../../Generic/InputBox/InputBox";
+import Button from "../../Generic/Button/Button";
+import "./loginPage.css";
 function LoginPage() {
   return (
     <div className="login-body">
@@ -14,7 +14,6 @@ function LoginPage() {
           type="text"
           name="email"
           placeholder="Email"
-          
           handleInput={null}
         />
         <InputBox
@@ -25,14 +24,14 @@ function LoginPage() {
           handleInput={null}
         />
         <div className="login-radio">
-        <input type="radio" value="PATIENT" name="role" />
-        <label>Patient</label>
-        <input type="radio" value="DOCTOR" name="role" />
-        <label>Doctor</label>
-        <input type="radio" value="ADMIN" name="role" />
-        <label>Admin</label>
+          <input type="radio" value="PATIENT" name="role" />
+          <label>Patient</label>
+          <input type="radio" value="DOCTOR" name="role" />
+          <label>Doctor</label>
+          <input type="radio" value="ADMIN" name="role" />
+          <label>Admin</label>
         </div>
-        <Button value="SIGN IN" type="blue"/>
+        <Button value="SIGN IN" type="blue" />
         <div>
           Don't have an account? <span>Sign Up</span>
         </div>

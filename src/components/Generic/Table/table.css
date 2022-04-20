@@ -1,6 +1,5 @@
 .table-container {
   overflow-x: auto;
-  
 }
 
 .custom-table {
@@ -9,7 +8,6 @@
   font-family: "Rubik", sans-serif;
   border-spacing: 0;
   width: 100%;
-  
 }
 .custom-table th,
 td {
@@ -27,12 +25,10 @@ td {
 }
 .custom-table tbody > tr {
   transition: all 0.2s linear;
-  
 }
 .custom-table tbody > tr:hover {
   background-color: #272a34;
-  transform: scale(1.01,1.01);
-  
+  transform: scale(1.01, 1.01);
 }
 
 .custom-table th {

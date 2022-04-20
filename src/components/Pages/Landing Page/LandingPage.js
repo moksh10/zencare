@@ -1,4 +1,4 @@
-import { ReactComponent as LandingPageBackground } from "./../../assets/images/landingPageBackground.svg"
+import { ReactComponent as LandingPageBackground } from "./../../../assets/images/landingPageBackground.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeartPulse,

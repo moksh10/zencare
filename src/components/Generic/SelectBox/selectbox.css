@@ -9,3 +9,8 @@ select {
   border: 0.275vmin solid transparent;
   width: 100%;
 }
+select:focus {
+  outline: 0;
+  color: rgba(203, 203, 203, 0.812);
+  border: 0.275vmin solid rgb(101, 94, 138);
+}
