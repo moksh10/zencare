@@ -1,5 +1,6 @@
 .table-container {
   overflow-x: auto;
+  
 }
 
 .custom-table {
@@ -8,10 +9,11 @@
   font-family: "Rubik", sans-serif;
   border-spacing: 0;
   width: 100%;
+  
 }
 .custom-table th,
 td {
-  max-width: 20vw;
+  max-width: 15vw;
   letter-spacing: 0;
   border-bottom: 0.1vmin solid rgb(53, 53, 53);
   text-align: left;
@@ -19,7 +21,7 @@ td {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: 3vmin;
+  padding: 1.9vmin;
   cursor: pointer;
   overflow-x: hidden;
 }
@@ -28,8 +30,9 @@ td {
   
 }
 .custom-table tbody > tr:hover {
-  background-color: #323848;
+  background-color: #272a34;
   transform: scale(1.01,1.01);
+  
 }
 
 .custom-table th {

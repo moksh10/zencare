@@ -3,7 +3,7 @@ import ButtonSection from "../ButtonSection/ButtonSection.js";
 import Table from "../Table/Table.js";
 import QuerySection from "../QuerySection/QuerySection.js";
 import "./container.css";
-function Container({ inputBoxes, buttons, textareas, formHeading, formTitle }) {
+function Container({ inputBoxes, buttons, textareas, formHeading, formTitle, select }) {
   // const container = (
   //   <>
   //     <FormSection inputBoxes={inputBoxes} textareas={textareas} />
@@ -128,12 +128,18 @@ function Container({ inputBoxes, buttons, textareas, formHeading, formTitle }) {
     <>
       <h1>{formHeading}</h1>
       <p>{formTitle}</p>
-
-      <QuerySection button={buttons[0]} inputBox={inputBoxes[0]} />
-      <Table data={data} buttons={buttons} />
-      <ButtonSection buttons={buttons}/>
+      <FormSection inputBoxes={inputBoxes}  textareas={textareas} select={select}/>
+      <ButtonSection buttons={buttons} />
+     
     </>
   );
   return <div className="container-main">{content}</div>;
 }
 export default Container;
+// eslint-disable-next-line no-lone-blocks
+{/* <QuerySection button={buttons[0]} inputBox={inputBoxes[0]} />
+      <Table data={data} buttons={buttons} />
+      <ButtonSection buttons={buttons}/> */}
+      // <FormSection inputBoxes={inputBoxes}  textareas={textareas}/>
+      // <ButtonSection buttons={buttons}/>
+     

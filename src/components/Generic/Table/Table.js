@@ -11,7 +11,7 @@ function Table({ buttons, data }) {
   );
   
   const rows = <tbody>{data.content.map((value, index) => (
-    <tr key={index}>
+    <tr  key={index}>
       {Object.values(value).map((val, idx) => {
         return <td key={idx}>{val}</td>}
         

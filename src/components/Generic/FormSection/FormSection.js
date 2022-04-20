@@ -1,7 +1,8 @@
 import InputBox from "../InputBox/InputBox.js";
 import TextArea from "../TextArea/TextArea.js";
+import SelectBox from "../SelectBox/SelectBox.js";
 import './formsection.css'
-function FormSection({ inputBoxes, textareas})
+function FormSection({ inputBoxes=[], textareas=[], select=[]})
 {
     const inputBox = inputBoxes.map((value, index) => (
         <div>
@@ -31,9 +32,17 @@ function FormSection({ inputBoxes, textareas})
           />
         </div>
       ));
+      const option=select.map((value, index) => (
+        <div>
+          <div className="div-label">{value.label}</div>
+          <SelectBox options={value.options}
+          />
+        </div>
+      ));
     return  (<div className="input-form-boxes">
     {inputBox}
     {textarea}
+    {option}
   </div>)
 
 }

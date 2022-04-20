@@ -1,0 +1,11 @@
+select {
+  outline: 0;
+  color: #c3c3c3;
+  font-size: 2.75vmin;
+  padding: 1.75vmin;
+  border-radius: 0.3vmin;
+  transition: all 0.35s linear;
+  background-color: #2a3038;
+  border: 0.275vmin solid transparent;
+  width: 100%;
+}

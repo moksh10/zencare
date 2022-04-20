@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
-  color:#747a9e;
-  letter-spacing:.080vmin;
+  color: #747a9e;
+  letter-spacing: 0.08vmin;
 }
 :root {
   --blue: #0058dd;
@@ -11,25 +11,24 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:active,
 input:-webkit-autofill:focus {
-    background-color: rgb(58, 58, 58) !important;
-    color: rgb(82, 82, 82) !important;
-    box-shadow: 0 0 0 1000px rgb(68, 68, 68) inset;
-    -webkit-box-shadow: 0 0 0 1000px rgb(68, 68, 68) inset !important;
-    -webkit-text-fill-color: white !important;
-   
+  background-color: rgb(58, 58, 58) !important;
+  color: rgb(82, 82, 82) !important;
+  box-shadow: 0 0 0 1000px rgb(68, 68, 68) inset;
+  -webkit-box-shadow: 0 0 0 1000px rgb(68, 68, 68) inset !important;
+  -webkit-text-fill-color: white !important;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
- ::-webkit-scrollbar {
-  width:1vmin;
+::-webkit-scrollbar {
+  width: 1vmin;
   height: 1vmin;
-  }
+}
 
 ::-webkit-scrollbar-track {
-  background: rgb(73, 73, 143);
+  background: #49498f;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -37,16 +36,14 @@ html {
   border-radius: 0.4vmin;
 }
 
-
-
 ::selection {
-  background-color: rgb(88, 82, 150);
+  background-color: rgb(107, 100, 183);
   color: rgb(26, 26, 26);
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Rubik', sans-serif;
-
+  font-family: "Rubik", sans-serif;
+  background-color: black;
 }

@@ -1,0 +1,35 @@
+.app-header {
+  background-color: #191c24;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 10vmin;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: fixed;
+  box-shadow: .1vmin .1vmin 10vmin .1vmin rgba(0, 0, 0, 0.542);
+}
+.app-header > div:nth-child(odd) {
+  letter-spacing: 0.3vmin;
+  width: 50%;
+  font-size: 5vmin;
+  letter-spacing: 0.4vmin;
+  font-weight: bold;
+  font-family: "Comfortaa", cursive;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 3vmin;
+  align-items: center;
+  height: 100%;
+}
+.app-header > div:nth-child(even) {
+  width: 50%;
+  color: #b6b6b6;
+  height: 100%;
+  font-size: 2.75vmin;
+  display: flex;
+  padding-right: 4vmin;
+  justify-content: flex-end;
+  align-items: center;
+}

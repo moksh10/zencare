@@ -1,27 +1,24 @@
-.query-section-container 
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-     padding: 1vmin;
+.query-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1vmin;
+  margin-bottom: 1vmin;
 }
-.query-section-container > div 
-{
-    height:100%;
-   width:100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.query-section-container > div >*
-{
-    margin:2vmin;
-    width: 15%;
-    height: 80%;
-
+.query-section-container > div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
+.query-section-container > div > * {
+  margin: 2vmin;
+  width: 25vmin;
+  height: 7vmin;
+  font-size: 2.2vmin;
+}

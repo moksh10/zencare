@@ -1,0 +1,13 @@
+.not-found
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 99vh;
+
+}
+.not-found-bg
+{
+    transform: scale(.5,.5);
+    
+}

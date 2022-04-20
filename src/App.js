@@ -1,10 +1,25 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Container from "./components/Generic/Container/Container.js";
 import LandingPage from "./components/Landing Page/LandingPage.js";
 import Loading from "./components/Loading/Loading.js";
 import LoginPage from "./components/Login Page/LoginPage.js";
+import Header from "./components/Generic/Header/Header.js";
+import SideBar from "./components/Generic/SideBar/SideBar.js";
+import {
+  mdiAccountBox,
+  mdiCalendar,
+  mdiCalendarPlus,
+  mdiFile,
+  mdiFilePlus,
+  mdiDoctor,
+  mdiPlusBox,
+  mdiTable,
+  mdiAccountSupervisorOutline,
+} from "@mdi/js";
 AOS.init({
   offset: 120,
   delay: 0,
@@ -16,13 +31,16 @@ AOS.refresh();
 function App() {
   //const landingPage=<LandingPage />
   //const loading=<Loading />
+  const showToast = () => {
+    toast.error("I am Tostify!");
+  };
   const buttons = [
-    { type: "red", value: "Delete",isDisabled: false},
-    { type: "blue", value: "View",isDisabled:false },
+    { handleClick: showToast, type: "blue", value: "View", isDisabled: false },
+    { handleClick: showToast, type: "red", value: "Delete", isDisabled: false },
   ];
   const inputBoxes = [
     {
-      label:"Email",
+      label: "Email",
       isDisabled: false,
       name: "Email",
       placeholder: "Email",
@@ -30,21 +48,23 @@ function App() {
       value: "Something",
     },
     {
-      label:"Password",
+      label: "Password",
       isDisabled: false,
       name: "Password",
       placeholder: "Password",
       type: "password",
       value: "",
-    },{
-      label:"Password",
+    },
+    {
+      label: "Password",
       isDisabled: false,
       name: "Password",
       placeholder: "Password",
       type: "password",
       value: "",
-    },{
-      label:"Phone",
+    },
+    {
+      label: "Phone",
       isDisabled: false,
       name: "Phone",
       placeholder: "Phone",
@@ -52,7 +72,7 @@ function App() {
       value: "Something",
     },
     {
-      label:"Appointment Date",
+      label: "Appointment Date",
       isDisabled: false,
       name: "Phone",
       placeholder: "Appointment Date",
@@ -60,7 +80,7 @@ function App() {
       value: "Something",
     },
     {
-      label:"Medical Record Date",
+      label: "Medical Record Date",
       isDisabled: false,
       name: "Phone",
       placeholder: "Medical Record Date",
@@ -68,30 +88,93 @@ function App() {
       value: "Something",
     },
   ];
+  const select = [{
+
+    label:"Choose Doctor",
+
+    options: [
+      {
+        label: "Apple",
+
+        value: "apple",
+      },
+
+      {
+        label: "Mango",
+
+        value: "mango",
+      },
+
+      {
+        label: "Banana",
+
+        value: "banana",
+      },
+
+      {
+        label: "Pineapple",
+
+        value: "pineapple",
+      },
+    ],
+  }];
   const textareas = [
-    
     {
-      label:"Appointment Status",
+      label: "Appointment Status",
       isDisabled: true,
       name: "Address",
       placeholder: "Address",
       type: "text",
-      value: "Something is defuibj f duiaebk ffbiuaebkj fbfuik eaf ieaf iekafi eakf eyiafbieafbie fbeabfieaf aeifbiaebf ",
+      value:
+        "Something is defuibj f duiaebk ffbiuaebkj fbfuik eaf ieaf iekafi eakf eyiafbieafbie fbeabfieaf aeifbiaebf ",
     },
     {
-      label:"Medical Record Drugs",
+      label: "Medical Record Drugs",
       isDisabled: true,
       name: "Address",
       placeholder: "Address",
       type: "text",
-      value: "Something is defuibj f duiaebk ffbiuaebkj fbfuik eaf ieaf iekafi eakf eyiafbieafbie fbeabfieaf aeifbiaebf ",
+      value:
+        "Something is defuibj f duiaebk ffbiuaebkj fbfuik eaf ieaf iekafi eakf eyiafbieafbie fbeabfieaf aeifbiaebf ",
     },
-    
   ];
+  const links = [
+    { value: "Profile", icon: mdiAccountBox, color: "#b6b6b6" },
+    { value: "Doctor", icon: mdiDoctor, color: "#00d25b" },
+    { value: "Patient", icon: mdiTable, color: "#ffab00" },
+    { value: "Admins", icon: mdiAccountSupervisorOutline, color: "#fc424a" },
+    { value: "Appointments", icon: mdiCalendar, color: "#ffab00" },
+    { value: "Medical Record", icon: mdiFile, color: "#0090e7" },
+    { value: "Add New Appointment", icon: mdiCalendarPlus, color: "#ffab00" },
+    { value: "Add New Medical Record", icon: mdiFilePlus, color: "#0090e7" },
+    { value: "Add New Doctor", icon: mdiPlusBox, color: "#00d25b" },
+    { value: "Add New Admin", icon: mdiPlusBox, color: "#fc424a" },
+  ];
+  const app = (
+    <Container
+      formHeading="Appointment"
+      formTitle="All Appointment"
+      inputBoxes={inputBoxes}
+      buttons={buttons}
+      textareas={textareas}
+      select={select}
+    />
+  );
+  const app2 = (
+    <>
+      <Header username="Moksh Teng" />
+      <div style={{ display: "flex" }}>
+        <SideBar links={links} />
+        {app}
+      </div>
+    </>
+  );
   return (
-     <Container formHeading="Appointment" formTitle="All Appointment" inputBoxes={inputBoxes} buttons={buttons}/>
-   
-   );
+    <>
+      {app2}
+      <ToastContainer limit={3} />
+    </>
+  );
 }
 
 export default App;
