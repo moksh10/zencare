@@ -2,7 +2,7 @@ import InputBox from "../InputBox/InputBox.js";
 import TextArea from "../TextArea/TextArea.js";
 import SelectBox from "../SelectBox/SelectBox.js";
 import "./formsection.css";
-function FormSection({ inputBoxes = [], textareas = [], select = [] }) {
+function FormSection({ inputBoxes = [], textareas = [], selectboxes = [] }) {
   const inputBox = inputBoxes.map((value, index) => (
     <div>
       <div className="div-label">{value.label}</div>
@@ -31,18 +31,26 @@ function FormSection({ inputBoxes = [], textareas = [], select = [] }) {
       />
     </div>
   ));
-  const option = select.map((value, index) => (
+  const selectbox = selectboxes.map((value, index) => (
     <div>
       <div className="div-label">{value.label}</div>
       <SelectBox options={value.options} />
     </div>
   ));
-  return (
-    <div className="input-form-boxes">
-      {inputBox}
-      {textarea}
-      {option}
-    </div>
-  );
+  let element = <></>;
+  if (
+    inputBoxes.length !== 0 ||
+    selectboxes.length !== 0 ||
+    textareas.length !== 0
+  ) {
+    element = (
+      <div className="input-form-boxes">
+        {inputBox}
+        {textarea}
+        {selectbox}
+      </div>
+    );
+  }
+  return element;
 }
 export default FormSection;

@@ -1,5 +1,5 @@
 import "./errorpage.css";
-import { ReactComponent as ErrorBackground } from "./../../assets/images/errorPage.svg";
+import { ReactComponent as ErrorBackground } from "./../../../assets/images/errorPage.svg";
 function ErrorPage() {
   return (
     <div className="not-found">

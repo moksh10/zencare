@@ -2,6 +2,7 @@ import Header from "../../Generic/Header/Header";
 import SideBar from "../../Generic/SideBar/SideBar";
 import Container from "../../Generic/Container/Container";
 import { links } from "../../../App";
+import './mainapp.css'
 function MainApp() {
   // formHeading="Appointment"
   //   formTitle="All Appointment"
@@ -11,12 +12,15 @@ function MainApp() {
   //   select={select}
   // tableData={tableData}
   //links={links}
-  return <>
-    <Header username="Moksh Teng" />
-    <div style={{ display: "flex" }}>
-      <SideBar links={links}/>
-      <Container />
-    </div>
-  </>;
+  return (
+    <>
+      <Header username="Moksh Teng" />
+      <div className="mainapp-body">
+        <SideBar links={links} />
+        <Container />
+      </div>
+      
+    </>
+  );
 }
 export default MainApp;

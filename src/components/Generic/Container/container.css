@@ -4,24 +4,19 @@
   justify-content: space-between;
   background-color: #191c24;
   border-radius: 0.75vmin;
-  padding:3.75vmin;
+  padding: 3.75vmin;
   margin: 3.5vmin;
-  width:75vw;
-  height:max-content;
+  width: 75vw;
+  height: max-content;
   margin-top: 15vmin;
-  margin-left: 22vmin;
-  
 }
 .container-main > h1 {
   font-size: 4vmin;
   color: white;
-  margin-top: .75vmin;
+  margin-top: 0.75vmin;
   margin-bottom: 1.5vmin;
 }
 .container-main > p {
   font-size: 2.5vmin;
-  margin-bottom:2.75vmin;
+  margin-bottom: 2.75vmin;
 }
-
-
-

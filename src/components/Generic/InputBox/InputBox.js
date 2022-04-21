@@ -6,6 +6,7 @@ function InputBox({ type, name, placeholder, value, handleInput, isDisabled }) {
       type={type}
       name={name}
       placeholder={placeholder}
+      value={value}
       onKeyUp={handleInput}
       onPaste={handleInput}
       onCut={handleInput}
