@@ -1,8 +1,8 @@
 import Header from "../../Generic/Header/Header";
 import SideBar from "../../Generic/SideBar/SideBar";
 import Container from "../../Generic/Container/Container";
-import { links } from "../../../App";
-import './mainapp.css'
+import { links } from "./../../../states/SideBar/links.js";
+import "./mainapp.css";
 function MainApp() {
   // formHeading="Appointment"
   //   formTitle="All Appointment"
@@ -19,7 +19,6 @@ function MainApp() {
         <SideBar links={links} />
         <Container />
       </div>
-      
     </>
   );
 }
