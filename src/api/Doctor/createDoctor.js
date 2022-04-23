@@ -6,7 +6,7 @@ import handleError from "../Error/handleError.js"
 
 async function createDoctor(doctor) {
     const data = await API.post('/doctor', doctor).catch(handleError);
-    return data ? data.data : errorMessage
+    return data ? {data:data.data.data, success:true} : errorMessage
 
 }
 // const doctor = {

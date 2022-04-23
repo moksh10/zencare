@@ -6,7 +6,7 @@ import handleError from "../Error/handleError.js"
 
 async function updateAdmin(admin) {
     const data = await API.put('/admin', admin).catch(handleError);
-    return data ? data.data : errorMessage
+    return data ? {data:data.data.data, success:true} : errorMessage
 
 }
 // const admin = {

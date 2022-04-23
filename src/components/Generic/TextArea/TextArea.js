@@ -1,10 +1,9 @@
 import "./textarea.css";
-function TextArea({ type, name, placeholder, value, handleInput, isDisabled }) {
+function TextArea({  name, placeholder, value, handleInput, isDisabled }) {
   return (
     <textarea
       className="textarea"
       value={value}
-      type={type}
       name={name}
       placeholder={placeholder}
       onKeyUp={handleInput}

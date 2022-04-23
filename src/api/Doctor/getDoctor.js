@@ -6,7 +6,7 @@ import handleError from "../Error/handleError.js"
 
 async function getDoctor(doctorID) {
     const data = await API.get(`/doctor/${doctorID}`).catch(handleError);
-    return data ? data.data : errorMessage
+    return data ? {data:data.data.data, success:true} : errorMessage
 
 }
 export default getDoctor

@@ -9,7 +9,7 @@ import {
   mdiPlusBox,
   mdiTable,
 } from "@mdi/js";
-export const links = {
+export const nav = {
   admin: [
     { value: "Profile", icon: mdiAccountBox, color: "#b6b6b6" },
     { value: "Doctor", icon: mdiDoctor, color: "#00d25b" },

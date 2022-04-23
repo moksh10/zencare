@@ -6,7 +6,7 @@ import handleError from "../../Error/handleError.js"
 
 async function getAllAppointmentByDate(appointmentDate) {
     const data = await API.get(`/appointment/date/${appointmentDate}`).catch(handleError);
-    return data ? data.data : errorMessage
+    return data ? {data:data.data.data, success:true} : errorMessage
 
 }
 export default getAllAppointmentByDate

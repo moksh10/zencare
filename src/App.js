@@ -1,20 +1,11 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { lazy, Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import "./App.css";
-import Loading from "./components/Generic/Loading/Loading.js";
-const Login = lazy(() => import("./components/Pages/Login Page/LoginPage.js"));
-const Signup = lazy(() => import("./components/Pages/Signup Page/Signup.js"));
-const Landing = lazy(() =>
-  import("./components/Pages/Landing Page/LandingPage.js")
-);
-const Error = lazy(() => import("./components/Pages/Error Page/ErrorPage.js"));
-const MainApp = lazy(() =>
-  import("./components/Pages/MainApp Page/MainApp.js")
-);
+import Routes from "./components/Routes.js";
+import { UserProvider } from "./states/Global State/Auth State/AuthState.js";
+import { LoadingProvider } from "./states/Global State/Loading State/Loading.js";
+import { ErrorProvider } from "./states/Global State/Error Message/ErrorMessage.js";
+import { SuccessProvider } from "./states/Global State/Success Message/SuccessMessage.js";
+import { FormProvider } from "./states/Global State/Form State/FormState.js";
 AOS.init({
   offset: 120,
   delay: 0,
@@ -26,34 +17,21 @@ AOS.refresh();
 function App() {
   //const landingPage=<LandingPage />
   //const loading={<Loading />}/>
-  const showToast = () => {
-    toast.error("I am Tostify!");
-  };
-  
+
   return (
-      <Routes>
-        <Route
-          path="/"
-          element={<Suspense fallback={<Loading />}><Landing /></Suspense>}
-        />
-        <Route
-          path="/login"
-          element={<Suspense fallback={<Loading />}><Login /></Suspense>}
-        />
-        <Route
-          path="/signup"
-          element={<Suspense fallback={<Loading />}><Signup/></Suspense>}
-        />
-        <Route
-          path="/app"
-          element={<Suspense fallback={<Loading />}><MainApp /></Suspense>}
-        />
-        <Route
-          path="*"
-          element={<Suspense fallback={<Loading />}><Error /></Suspense>}
-        />
-      </Routes>
-    
+    <>
+      <FormProvider>
+        <UserProvider>
+          <LoadingProvider>
+            <ErrorProvider>
+              <SuccessProvider>
+                <Routes />
+              </SuccessProvider>
+            </ErrorProvider>
+          </LoadingProvider>
+        </UserProvider>
+      </FormProvider>
+    </>
   );
 }
 

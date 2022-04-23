@@ -6,7 +6,7 @@ import handleError from "../Error/handleError.js"
 
 async function updateAppointment(appointment) {
     const data = await API.put('/appointment', appointment).catch(handleError);
-    return data ? data.data : errorMessage
+    return data ? {data:data.data.data, success:true} : errorMessage
 }
 
 // const appointment = {

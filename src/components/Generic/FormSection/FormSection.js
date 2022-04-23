@@ -20,7 +20,7 @@ function FormSection({ inputBoxes = [], textareas = [], selectboxes = [] }) {
   const textarea = textareas.map((value, index) => (
     <div>
       <div className="div-label">{value.label}</div>
-      <TextArea
+      <TextArea  
         key={index}
         isDisabled={value.isDisabled}
         handleInput={value.handleInput}
@@ -34,7 +34,7 @@ function FormSection({ inputBoxes = [], textareas = [], selectboxes = [] }) {
   const selectbox = selectboxes.map((value, index) => (
     <div>
       <div className="div-label">{value.label}</div>
-      <SelectBox options={value.options} />
+      <SelectBox key={index} options={value.options} />
     </div>
   ));
   let element = <></>;

@@ -1,7 +1,6 @@
 import Header from "../../Generic/Header/Header";
 import SideBar from "../../Generic/SideBar/SideBar";
-import Container from "../../Generic/Container/Container";
-import { links } from "./../../../states/SideBar/links.js";
+import { Outlet } from "react-router-dom";
 import "./mainapp.css";
 function MainApp() {
   // formHeading="Appointment"
@@ -16,8 +15,8 @@ function MainApp() {
     <>
       <Header username="Moksh Teng" />
       <div className="mainapp-body">
-        <SideBar links={links} />
-        <Container />
+        <SideBar />
+        <Outlet />
       </div>
     </>
   );

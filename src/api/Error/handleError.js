@@ -1,8 +1,5 @@
-import {
-    errorMessage
-} from './errorMessage.js'
 const handleError = (error) => {
-
-    return error.response ? error.response : errorMessage;
-}
-export default handleError
+  const message = error.response ? error.response : "Server Error";
+  return { success: false, error: message };
+};
+export default handleError;

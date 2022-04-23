@@ -6,7 +6,7 @@ import handleError from "../Error/handleError.js"
 
 async function getAdmin(adminID) {
     const data = await API.get(`/admin/${adminID}`).catch(handleError);
-    return data ? data.data : errorMessage
+    return data ? {data:data.data.data, success:true} : errorMessage
 
 }
 export default getAdmin
