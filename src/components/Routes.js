@@ -53,6 +53,30 @@ function Routes() {
             }
           />
           <Route
+            path="doctor/:id"
+            element={
+              <Suspense fallback={<Loading />}>
+                <InfoBox />
+              </Suspense>
+            }
+          />
+          <Route
+            path="admin/:id"
+            element={
+              <Suspense fallback={<Loading />}>
+                <InfoBox />
+              </Suspense>
+            }
+          />
+          <Route
+            path="patient/:id"
+            element={
+              <Suspense fallback={<Loading />}>
+                <InfoBox />
+              </Suspense>
+            }
+          />
+          <Route
             path="appointment/:id"
             element={
               <Suspense fallback={<Loading />}>
@@ -60,6 +84,15 @@ function Routes() {
               </Suspense>
             }
           />
+          <Route
+            path="medicalRecord/:id"
+            element={
+              <Suspense fallback={<Loading />}>
+                <InfoBox />
+              </Suspense>
+            }
+          />
+
         </Route>
         <Route
           path="*"

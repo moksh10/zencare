@@ -27,7 +27,7 @@ export const useInfo = (entity) => {
           type: "text",
           name: "patientName",
           placeholder: "Patient Name",
-          value: formData.patient.patientName,
+          value: formData.patient?formData.patient.patientName:formData.patient,
           handleInput: handleInput,
           isDisabled: true,
         },
@@ -36,7 +36,7 @@ export const useInfo = (entity) => {
           type: "text",
           name: "doctorName",
           placeholder: "Doctor Name",
-          value: formData.doctor.doctorName,
+          value: formData.doctor?formData.doctor.doctorName:formData.doctor,
           handleInput: handleInput,
           isDisabled: true,
         },
@@ -44,7 +44,6 @@ export const useInfo = (entity) => {
       textareas:[
         {
           label: "Medical Record Diagnosis",
-          
           name: "medicalRecordDiagnosis",
           placeholder: "Medical Record Diagnosis",
           value: formData.medicalRecordDiagnosis,
@@ -98,7 +97,7 @@ export const useInfo = (entity) => {
           type: "text",
           name: "patientName",
           placeholder: "Patient Name",
-          value: formData.patient.patientName,
+          value: formData.patient?formData.patient.patientName:formData.patient,
           handleInput: handleInput,
           isDisabled: true,
         },
@@ -108,7 +107,7 @@ export const useInfo = (entity) => {
           type: "text",
           name: "patientAge",
           placeholder: "Patient Age",
-          value: formData.patient.patientAge,
+          value: formData.patient?formData.patient.patientAge:formData.patient,
           handleInput: handleInput,
           isDisabled: true,
         },
@@ -117,7 +116,7 @@ export const useInfo = (entity) => {
           type: "text",
           name: "doctorName",
           placeholder: "Doctor Name",
-          value: formData.doctor.doctorName,
+          value: formData.doctor?formData.doctor.doctorName:formData.doctor,
           handleInput: handleInput,
           isDisabled: true,
         },
@@ -173,7 +172,7 @@ export const useInfo = (entity) => {
         },
         {
           label: "Patient Age",
-          type: "number",
+          type: "text",
           name: "patientAge",
           placeholder: "Patient Age",
           value: formData.patientAge,
@@ -189,15 +188,7 @@ export const useInfo = (entity) => {
           handleInput: handleInput,
           isDisabled: true,
         },
-        {
-          label: "New Password",
-          type: "password",
-          name: "password",
-          placeholder: "New Password",
-          value: formData.password,
-          handleInput: handleInput,
-          isDisabled: true,
-        },
+       
       ],
       textareas: [
         {
@@ -276,15 +267,7 @@ export const useInfo = (entity) => {
           isDisabled: true,
         },
 
-        {
-          label: "New Password",
-          type: "password",
-          name: "password",
-          placeholder: "New Password",
-          value: formData.password,
-          handleInput: handleInput,
-          isDisabled: true,
-        },
+        
       ],
       textareas: [
         {
@@ -336,15 +319,7 @@ export const useInfo = (entity) => {
           handleInput: handleInput,
           isDisabled: true,
         },
-        {
-          label: "New Password",
-          type: "password",
-          name: "password",
-          placeholder: "New Password",
-          value: formData.password,
-          handleInput: handleInput,
-          isDisabled: true,
-        },
+        
       ],
     },
   };

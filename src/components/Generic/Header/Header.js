@@ -31,7 +31,7 @@ function Header({ username = "" }) {
         setUserName(response.data[map[user.role]]);
         setIsLoading(false)
       } else {
-        showError(response.error);
+        showError(response.message);
         setIsLoading(false)
       }
     });
