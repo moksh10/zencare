@@ -9,15 +9,15 @@
   flex-direction: row;
   position: fixed;
   top:0;
-  box-shadow: 0.1vmin 0.1vmin 1vmin 0.1vmin rgba(0, 0, 0, 0.316);
+  box-shadow: 0.1vmin 0.1vmin .9vmin 0.1vmin rgba(0, 0, 0, 0.316);
 }
 .app-header > div:nth-child(odd) {
   letter-spacing: 0.3vmin;
   width: 50%;
-  font-size: 5vmin;
+  font-size: 5.1vmin;
   letter-spacing: 0.4vmin;
   font-weight: bold;
-  font-family: "Comfortaa", cursive;
+  font-family: "Open Sans", sans-serif;
   display: flex;
   justify-content: flex-start;
   padding-left: 3vmin;
@@ -28,9 +28,9 @@
   width: 50%;
   color: #b6b6b6;
   height: 100%;
-  font-size: 2.75vmin;
+  font-size: 2.8vmin;
   display: flex;
-  padding-right: 4vmin;
+  padding-right: 4.5vmin;
   justify-content: flex-end;
   align-items: center;
 }

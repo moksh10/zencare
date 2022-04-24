@@ -8,6 +8,7 @@ const Landing = lazy(() => import("./Pages/Landing Page/LandingPage.js"));
 const Error = lazy(() => import("./Pages/Error Page/ErrorPage.js"));
 const MainApp = lazy(() => import("./Pages/MainApp Page/MainApp.js"));
 const Profile = lazy(() => import("./Entity/Profile/Profile.js"));
+const ListBox = lazy(() => import("./Entity/ListBox/ListBox.js"))
 function Routes() {
   return (
     <>
@@ -53,6 +54,46 @@ function Routes() {
             }
           />
           <Route
+            path="doctor"
+            element={
+              <Suspense fallback={<Loading />}>
+                <ListBox />
+              </Suspense>
+            }
+          />
+          <Route
+            path="admin"
+            element={
+              <Suspense fallback={<Loading />}>
+                <ListBox />
+              </Suspense>
+            }
+          />
+          <Route
+            path="patient"
+            element={
+              <Suspense fallback={<Loading />}>
+                <ListBox />
+              </Suspense>
+            }
+          />
+          <Route
+            path="appointment"
+            element={
+              <Suspense fallback={<Loading />}>
+                <ListBox />
+              </Suspense>
+            }
+          />
+          <Route
+            path="medicalRecord"
+            element={
+              <Suspense fallback={<Loading />}>
+                <ListBox />
+              </Suspense>
+            }
+          />
+          <Route
             path="doctor/:id"
             element={
               <Suspense fallback={<Loading />}>
@@ -92,6 +133,7 @@ function Routes() {
               </Suspense>
             }
           />
+          
 
         </Route>
         <Route

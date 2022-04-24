@@ -1,5 +1,7 @@
 .table-container {
   overflow-x: auto;
+  height:63vmin;
+  overflow-y: auto;
 }
 
 .custom-table {
@@ -11,7 +13,8 @@
 }
 .custom-table th,
 td {
-  max-width: 15vw;
+  height:9vmin;
+  max-width: 10vw;
   letter-spacing: 0;
   border-bottom: 0.1vmin solid rgb(53, 53, 53);
   text-align: left;
@@ -36,8 +39,8 @@ td {
   font-weight: bold;
 }
 .custom-table td {
-  font-size: 2.1vmin;
+  font-size: 2.4vmin;
 }
 .custom-table > tbody > tr > td > button {
-  font-size: 2.1vmin;
+  font-size: 2.2vmin;
 }

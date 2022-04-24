@@ -15,6 +15,7 @@ function QuerySection({ queryInputBoxes = [], queryButtons = [] }) {
                 placeholder={value.placeholder}
                 type={value.type}
                 value={value.value}
+                handleInput={value.handleInput}
               />
             );
           })}

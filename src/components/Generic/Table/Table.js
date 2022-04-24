@@ -1,12 +1,16 @@
 import "./table.css";
 import Button from "../Button/Button";
+import { convertToString } from "./../../../util/mapKeyNames.js";
 function Table({ tableButtons = [], tableData = [] }) {
   let element = <></>;
+  if (tableData.length === 0) {
+    return element;
+  }
   const heading = (
     <thead>
       <tr>
-        {tableData.map((value, index) => (
-          <th key={index}>{value}</th>
+        {Object.keys(tableData[0]).map((value, index) => (
+          <th key={index}>{convertToString(value)}</th>
         ))}
       </tr>
     </thead>

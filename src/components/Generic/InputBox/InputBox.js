@@ -12,6 +12,7 @@ function InputBox({ type, name, placeholder, value, handleInput, isDisabled }) {
       onCut={handleInput}
       onInput={handleInput}
       onChange={handleInput}
+      onBlur={handleInput}
       disabled={isDisabled}
     />
   );
