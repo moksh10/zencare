@@ -23,6 +23,7 @@ td {
   text-overflow: ellipsis;
   white-space: nowrap;
   padding: 1.9vmin;
+  margin-right:.3vmin;
   cursor: pointer;
   overflow-x: hidden;
 }
@@ -41,6 +42,14 @@ td {
 .custom-table td {
   font-size: 2.4vmin;
 }
+.custom-table td:last-child{
+  
+  border-top: 0.1vmin solid rgb(53, 53, 53);
+  border-bottom: 0.1vmin solid rgb(53, 53, 53);
+}
 .custom-table > tbody > tr > td > button {
-  font-size: 2.2vmin;
+  font-size: 2vmin;
+  width:75%;
+  letter-spacing: 0.08vmin;
+
 }

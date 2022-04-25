@@ -6,10 +6,12 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import "./LandingPage.css";
+import { useNavigate } from "react-router-dom";
 function LandingPage() {
   const logoIcon = <FontAwesomeIcon icon={faHeartPulse} />;
   const locationIcon = <FontAwesomeIcon icon={faLocationPin} />;
   const contactIcon = <FontAwesomeIcon icon={faUser} />;
+  const navigate = useNavigate();
   return (
     <div className="landing-container">
       <div className="landing-header" data-aos="fade-down">
@@ -18,7 +20,7 @@ function LandingPage() {
           <div>Zencare</div>
         </div>
         <div>
-          <button>Register</button>
+          <button onClick={() => navigate("signup")}>Register</button>
         </div>
       </div>
       <div className="landing-body">
@@ -28,7 +30,9 @@ function LandingPage() {
         <div>
           <div>Healthcare Clinic at your Neighbourhood</div>
           <div>
-            <button>Book Appointment Now</button>
+            <button onClick={() => navigate("login")}>
+              Book Appointment Now
+            </button>
           </div>
         </div>
       </div>

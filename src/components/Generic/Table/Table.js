@@ -1,5 +1,5 @@
 import "./table.css";
-import Button from "../Button/Button";
+import TableButton from "../TableButton/TableButton";
 import { convertToString } from "./../../../util/mapKeyNames.js";
 function Table({ tableButtons = [], tableData = [] }) {
   let element = <></>;
@@ -24,17 +24,39 @@ function Table({ tableButtons = [], tableData = [] }) {
             return <td key={idx}>{val}</td>;
           })}
 
-          {tableButtons.map((value, index) => (
-            <td>
-              <Button
-                key={index}
-                type={value.type}
-                handleClick={value.handleClick}
-                isDisabled={value.isDisabled}
-                value={value.value}
-              />
-            </td>
-          ))}
+          {tableButtons.map((val, idx) => {
+            let id;
+            if (value.appointmentID) {
+              id = value.appointmentID;
+            }
+            else if (value.doctorID) {
+              id = value.doctorID;
+            }
+            else if (value.patientID) {
+              id = value.patientID;
+            }
+
+            else if (value.medicalRecordID) {
+              id = value.medicalRecordID;
+            }
+
+            else if (value.adminID) {
+              id = value.adminID;
+            }
+
+            return (
+              <td>
+                <TableButton
+                  id={id}
+                  key={idx}
+                  type={val.type}
+                  handleClick={val.handleClick}
+                  isDisabled={val.isDisabled}
+                  value={val.value}
+                />
+              </td>
+            );
+          })}
         </tr>
       ))}
     </tbody>

@@ -5,7 +5,7 @@ import { useErrorContext } from "../../../states/Global State/Error Message/Erro
 import { useSuccessContext } from "../../../states/Global State/Success Message/SuccessMessage.js";
 import { useLoadingContext } from "../../../states/Global State/Loading State/Loading.js";
 import { useFormContext } from "../../../states/Global State/Form State/FormState.js";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { getAllMap } from "./../../../api map/getAllMap.js";
 import { useQuery } from "./../../../custom hooks/useQuery.js";
 import { filterTableData } from "./../../../util/filterTableData.js";
@@ -15,9 +15,10 @@ function ListBox() {
   const [tableData, setTableData] = useState([]);
   const { setIsLoading } = useLoadingContext();
   const { showError } = useErrorContext();
-  const { formData,resetFormData } = useFormContext();
+  const { formData, resetFormData } = useFormContext();
   const { showSuccess } = useSuccessContext();
   const location = useLocation();
+  const navigate = useNavigate();
   const entity = location.pathname.split("/")[2];
   const heading = entity.charAt(0).toUpperCase() + entity.slice(1);
   const title = "All " + heading + "s";
@@ -26,13 +27,20 @@ function ListBox() {
   const query = useQuery(entity, role);
   const queryInputBoxes = query ? query.inputBoxes : [];
   const queryButtons = query ? query.buttons : [];
+  function click(id)
+  { 
+    navigate(""+id)
+  }
+  const tableButtons = [
+    { value: "VIEW", handleClick:click, type: "blue", isDisabled: false },
+  ];
   function getData() {
-    if (entity === "medicalRecord" && role === "doctor") {
+    if (entity === "medicalRecord" && role === "admin") {
       return;
     }
     let resource = "";
     if (entity === "medicalRecord" && role === "patient") {
-      resource = user.id;
+      resource = user.userID;
     }
 
     if (entity === "medicalRecord" && role === "doctor") {
@@ -43,10 +51,10 @@ function ListBox() {
       }
     }
     if (entity === "appointment") {
-      resource = formData.date ? formData.date : getDate()
+      resource = formData.date ? formData.date : getDate();
     }
     setIsLoading(true);
-    fetch(resource,role).then((response) => {
+    fetch(resource, role).then((response) => {
       if (response.success) {
         const data = response.data;
         const filteredTableData = filterTableData(entity, data);
@@ -59,12 +67,13 @@ function ListBox() {
   }
   useEffect(() => {
     getData();
-    return resetFormData()
+    return resetFormData;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
-    getData()
-  },[location])
+    setTableData([]);
+    getData();
+  }, [location]);
   return (
     <>
       <Container
@@ -73,6 +82,7 @@ function ListBox() {
         queryInputBoxes={queryInputBoxes}
         queryButtons={queryButtons}
         tableData={tableData}
+        tableButtons={tableButtons}
       />
     </>
   );

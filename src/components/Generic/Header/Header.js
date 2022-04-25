@@ -6,11 +6,13 @@ import getPatient from "../../../api/Patient/getPatient";
 import { useErrorContext } from "../../../states/Global State/Error Message/ErrorMessage";
 import { useLoadingContext } from "../../../states/Global State/Loading State/Loading";
 import "./header.css";
+import { useNavigate } from "react-router-dom";
 function Header({ username = "" }) {
   const { user } = useAuth();
   const { setIsLoading } = useLoadingContext();
   const { showError } = useErrorContext();
   const [userName, setUserName] = useState("");
+  const navigate = useNavigate();
   let fetch = null;
   if (user.role === "admin") {
     fetch = getAdmin;
@@ -25,21 +27,21 @@ function Header({ username = "" }) {
     doctor: "doctorName",
   };
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     fetch(user.userID).then((response) => {
       if (response.success) {
         setUserName(response.data[map[user.role]]);
-        setIsLoading(false)
+        setIsLoading(false);
       } else {
         showError(response.message);
-        setIsLoading(false)
+        setIsLoading(false);
       }
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="app-header">
-      <div>Zencare</div>
+      <div onClick={() => navigate("/")}>Zencare</div>
       <div>{userName}</div>
     </div>
   );

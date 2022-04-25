@@ -14,6 +14,7 @@
 .app-header > div:nth-child(odd) {
   letter-spacing: 0.3vmin;
   width: 50%;
+  cursor: pointer;
   font-size: 5.1vmin;
   letter-spacing: 0.4vmin;
   font-weight: bold;
