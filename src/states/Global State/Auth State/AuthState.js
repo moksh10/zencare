@@ -1,7 +1,7 @@
 import { createContext, useState,useContext } from "react";
 const UserContext = createContext();
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({ userID: 6, role: "admin", auth: false });
+  const [user, setUser] = useState({ userID: 4, role: "patient", auth: false });
 
 
   return (

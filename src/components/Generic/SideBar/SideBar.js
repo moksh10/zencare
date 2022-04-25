@@ -12,6 +12,7 @@ function SideBar({ links = [] }) {
       icon={value.icon}
       value={value.value}
       color={value.color}
+      path={value.path}
     />
   ));
   return (

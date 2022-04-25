@@ -21,7 +21,6 @@ function Profile() {
   const fetch = getMap(role);
   useEffect(() => {
     setIsLoading(true);
-    resetFormData();
     fetch(user.userID).then((response) => {
       if (response.success) {
         const data = response.data;
@@ -31,6 +30,7 @@ function Profile() {
       }
       setIsLoading(false);
     });
+    
   }, []);
   return (
     <Container

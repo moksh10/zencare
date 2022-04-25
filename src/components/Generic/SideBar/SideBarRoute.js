@@ -1,10 +1,11 @@
 import Icon from '@mdi/react';
-function SideBarRoute({icon,value,color})
+import { NavLink } from 'react-router-dom';
+function SideBarRoute({icon,value,color,path})
 {
-    return <div className="sidebar-route">
+    return <NavLink className="sidebar-route" to={path}>
         <div><Icon path={icon}
           color={color} className="s-icon"/></div>
         <div>{value}</div>
-    </div>
+    </NavLink>
 }
 export default SideBarRoute

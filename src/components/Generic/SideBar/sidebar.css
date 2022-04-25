@@ -19,8 +19,15 @@
   justify-content: space-between;
   width: 100%;
 }
+.sidebar-routes .active {
+  background-color: #0f1015;
+  border-left: 0.5vmin solid #0090e7;
+  border-radius: 0 3vmin 3vmin 0;
+  text-decoration: none;
+}
 .sidebar-route {
   display: flex;
+  text-decoration: none;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -35,7 +42,6 @@
 }
 .sidebar-route:hover {
   background-color: #0f1015;
-  border-left: 0.5vmin solid #0090e7;
   border-radius: 0 3vmin 3vmin 0;
 }
 

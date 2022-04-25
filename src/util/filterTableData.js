@@ -10,6 +10,7 @@ export const filterTableData = (entity, data) => {
     "doctorName",
     "doctorContact",
     "specialistIn",
+    "doctorEmail"
   ]);
   const patient = new Set([
     "patientID",
@@ -46,6 +47,10 @@ export const filterTableData = (entity, data) => {
         }if(val[0]==="doctorName")
         {
           val[0]="xxDoctor"
+        }
+        if(val[0]==="specialistIn")
+        {
+          val[0]="xxSpecialist"
         }
         newRow[val[0]] = val[1];
       }

@@ -21,8 +21,8 @@ function InfoBox() {
   const fetch = getMap(entity);
   const inputBoxes = data.inputBoxes;
   const textareas = data.textareas;
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  function getData()
+  {
     setIsLoading(true);
     resetFormData();
     fetch(id).then((response) => {
@@ -35,7 +35,14 @@ function InfoBox() {
       }
       setIsLoading(false);
     });
+  }
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    getData()
   }, []);
+  useEffect(() => {
+    getData()
+  },[location])
   return (
     <Container
       heading={heading}

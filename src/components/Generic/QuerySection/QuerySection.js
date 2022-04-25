@@ -10,6 +10,7 @@ function QuerySection({ queryInputBoxes = [], queryButtons = [] }) {
           {queryInputBoxes.map((value, index) => {
             return (
               <InputBox
+              key={index}
                 isDisabled={value.isDisabled}
                 name={value.name}
                 placeholder={value.placeholder}
@@ -21,7 +22,7 @@ function QuerySection({ queryInputBoxes = [], queryButtons = [] }) {
           })}
           {queryButtons.map((value, index) => {
             return (
-              <Button
+              <Button key={index}
                 type={value.type}
                 handleClick={value.handleClick}
                 isDisabled={value.isDisabled}

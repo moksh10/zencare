@@ -15,7 +15,7 @@ function ListBox() {
   const [tableData, setTableData] = useState([]);
   const { setIsLoading } = useLoadingContext();
   const { showError } = useErrorContext();
-  const { formData } = useFormContext();
+  const { formData,resetFormData } = useFormContext();
   const { showSuccess } = useSuccessContext();
   const location = useLocation();
   const entity = location.pathname.split("/")[2];
@@ -46,10 +46,9 @@ function ListBox() {
       resource = formData.date ? formData.date : getDate()
     }
     setIsLoading(true);
-    fetch(resource).then((response) => {
+    fetch(resource,role).then((response) => {
       if (response.success) {
         const data = response.data;
-        console.log(data);
         const filteredTableData = filterTableData(entity, data);
         setTableData([...filteredTableData]);
       } else {
@@ -60,8 +59,12 @@ function ListBox() {
   }
   useEffect(() => {
     getData();
+    return resetFormData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  useEffect(() => {
+    getData()
+  },[location])
   return (
     <>
       <Container

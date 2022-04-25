@@ -1,7 +1,7 @@
 import "./selectbox.css";
-function SelectBox({ options = [] }) {
+function SelectBox({ name, options = [], value, handleInput }) {
   return (
-    <select>
+    <select name={name} value={value} onChange={handleInput}>
       {options.map((option) => (
         <option value={option.value}>{option.label}</option>
       ))}
