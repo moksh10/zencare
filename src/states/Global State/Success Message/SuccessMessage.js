@@ -2,19 +2,19 @@ import { createContext, useState, useContext } from "react";
 const SuccessContext = createContext({ message: "" });
 export const SuccessProvider = ({ children }) => {
   const [hasSuccess, setHasSuccess] = useState(false);
-  const [message, setMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   function showSuccess(successMessage) {
     setHasSuccess(true);
-    setMessage(successMessage);
+    setSuccessMessage(successMessage);
 
     setTimeout(() => {
-      setMessage("");
+      setSuccessMessage("");
       setHasSuccess(false);
     }, 4000);
   }
 
   return (
-    <SuccessContext.Provider value={{ message, hasSuccess, showSuccess }}>
+    <SuccessContext.Provider value={{ successMessage, hasSuccess, showSuccess }}>
       {children}
     </SuccessContext.Provider>
   );

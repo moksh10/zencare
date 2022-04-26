@@ -1,19 +1,19 @@
-import './alertbox.css'
-export default function Alertbox(props) { 
-    var className = "hide"
-    var message = ""
-    if(props.alert)
-    {
-    if(props.alert!=="")
-    {
-        message = props.alert.message
-        className = props.alert.type==="error"?"alertbox-error":"alertbox-success"
-    }
-    }
+import "./alertbox.css";
+import { useErrorContext } from "./../../../states/Global State/Error Message/ErrorMessage.js";
+import { useSuccessContext } from "../../../states/Global State/Success Message/SuccessMessage";
+export default function Alertbox() {
+  const { successMessage, hasSuccess } = useSuccessContext();
+  const { errorMessage, hasError } = useErrorContext();
+  let className = "hide";
+  let message = "";
+  if (hasSuccess) {
+    message = successMessage;
+    className = "alertbox-success";
+  }
+  if (hasError) {
+    message = errorMessage;
+    className = "alertbox-error";
+  }
 
-
-    return (
-        <div className={message!==""?className:"hide"} >{message}</div>
-       
-    )
+  return <div className={message !== "" ? className : "hide"}>{message}</div>;
 }

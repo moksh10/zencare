@@ -1,6 +1,8 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes as Router } from "react-router-dom";
 import InfoBox from "./Entity/InfoBox/InfoBox.js";
+import Spinner from "./Generic/Spinner/Spinner.js";
+import AlertBox from "./Generic/AlertBox/AlertBox.js";
 import Loading from "./Generic/Loading/Loading.js";
 const Login = lazy(() => import("./Pages/Login Page/LoginPage.js"));
 const Signup = lazy(() => import("./Pages/Signup Page/Signup.js"));
@@ -13,6 +15,8 @@ const CreateBox = lazy(() => import("./Entity/CreateBox/CreateBox.js"));
 function Routes() {
   return (
     <>
+      <Spinner />
+      <AlertBox />
       <Router>
         <Route
           path="/"
@@ -52,9 +56,7 @@ function Routes() {
               <Suspense fallback={<Loading />}>
                 <Profile />
               </Suspense>
-              
             }
-            
           />
           <Route
             path="doctor"

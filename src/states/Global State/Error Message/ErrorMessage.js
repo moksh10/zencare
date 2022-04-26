@@ -2,19 +2,19 @@ import { createContext, useState, useContext } from "react";
 const ErrorContext = createContext({ message: "" });
 export const ErrorProvider = ({ children }) => {
   const [hasError, setHasError] = useState(false);
-  const [message, setMessage] = useState("");
-  function showError(errorMessage) {
+  const [errorMessage, setErrorMessage] = useState("");
+  function showError(error) {
     setHasError(true);
-    setMessage(errorMessage);
+    setErrorMessage(error);
 
     setTimeout(() => {
-      setMessage("");
+      setErrorMessage("");
       setHasError(false);
     }, 4000);
   }
 
   return (
-    <ErrorContext.Provider value={{ message, hasError, showError }}>
+    <ErrorContext.Provider value={{ errorMessage, hasError, showError }}>
       {children}
     </ErrorContext.Provider>
   );

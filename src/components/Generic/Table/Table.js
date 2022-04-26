@@ -1,6 +1,7 @@
 import "./table.css";
 import TableButton from "../TableButton/TableButton";
 import { convertToString } from "./../../../util/mapKeyNames.js";
+import { extractID } from "./../../../util/extractID.js";
 function Table({ tableButtons = [], tableData = [] }) {
   let element = <></>;
   if (tableData.length === 0) {
@@ -25,25 +26,7 @@ function Table({ tableButtons = [], tableData = [] }) {
           })}
 
           {tableButtons.map((val, idx) => {
-            let id;
-            if (value.appointmentID) {
-              id = value.appointmentID;
-            }
-            else if (value.doctorID) {
-              id = value.doctorID;
-            }
-            else if (value.patientID) {
-              id = value.patientID;
-            }
-
-            else if (value.medicalRecordID) {
-              id = value.medicalRecordID;
-            }
-
-            else if (value.adminID) {
-              id = value.adminID;
-            }
-
+            const id = extractID(value);
             return (
               <td>
                 <TableButton
