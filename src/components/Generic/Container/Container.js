@@ -1,8 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import FormSection from "../FormSection/FormSection.js";
 import ButtonSection from "../ButtonSection/ButtonSection.js";
 import Table from "../Table/Table.js";
 import QuerySection from "../QuerySection/QuerySection.js";
 import "./container.css";
+import {useEffect} from 'react'
+import { useLoadingContext } from "./../../../states/Global State/Loading State/Loading.js";
 function Container({
   heading = "",
   title = "",
@@ -15,6 +18,13 @@ function Container({
   tableButtons = [],
   buttons = [],
 }) {
+  const {setIsLoading} =useLoadingContext();
+  useEffect(()=>{
+    setIsLoading(true);
+    setTimeout(()=>{
+      setIsLoading(false);
+    },300)
+  },[])
   const content = (
     <>
       <h1>{heading}</h1>

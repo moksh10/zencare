@@ -2,9 +2,9 @@ import API from "../Base API/API.js";
 
 import handleError from "../Error/handleError.js"
 
-async function createAppointment(doctorID, appointment) {
+async function createAppointment( appointment,doctorID) {
     const data = await API.post(`/appointment/${doctorID}`, appointment).catch(handleError);
-    return data.data?{success:true,data:data.data.data}:data.error   
+    return data.data?{success:true,data:data.data.data, message: data.data.message}:data.error   
 
 }
 // const appointment = {
@@ -14,6 +14,6 @@ async function createAppointment(doctorID, appointment) {
 //   appointmentDate:"1999-02-02"
 
 //}
-
+//, message: data.data.message
 // }
 export default createAppointment

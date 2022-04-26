@@ -4,7 +4,7 @@ import handleError from "../Error/handleError.js"
 
 async function updateMedicalRecord(medicalRecord) {
     const data = await API.put(`/medicalRecord`, medicalRecord).catch(handleError);
-    return data.data?{success:true,data:data.data.data}:data.error   
+    return data.data?{success:true,data:data.data.data, message: data.data.message}:data.error   
 
 }
 // const medicalRecord = {

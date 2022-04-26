@@ -1,7 +1,28 @@
 import { useFormContext } from "./../states/Global State/Form State/FormState.js";
+import { useNavigate } from "react-router-dom";
 export const useRegister = () => {
   const { formData, handleInput } = useFormContext();
+  const navigate = useNavigate();
+  const redirect = () => {
+    navigate("/login");
+  };
+  
   const data = {
+    buttons: [
+      {
+        value: "Go To Login Page",
+        handleClick: redirect,
+        type: "purple",
+        isDisabled: false,
+      },
+      {
+        value: "Sign Up",
+        handleClick: null,
+        action:"post",
+        type: "blue",
+        isDisabled: false,
+      },
+    ],
     inputBoxes: [
       {
         label: "Patient Name",
@@ -32,7 +53,7 @@ export const useRegister = () => {
       },
       {
         label: "Patient Age",
-        type: "text",
+        type: "number",
         name: "patientAge",
         placeholder: "Patient Age",
         value: formData.patientAge,

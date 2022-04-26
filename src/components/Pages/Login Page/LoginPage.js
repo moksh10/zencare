@@ -45,7 +45,7 @@ function LoginPage() {
         <Button value="SIGN IN" type="blue"/>
         <div>
           Don't have an account?{" "}
-          <span onClick={() => navigate("/signup")}>Sign Up</span>
+          <span onClick={() => navigate("/newpatient")}>Sign Up</span>
         </div>
       </div>
     </div>

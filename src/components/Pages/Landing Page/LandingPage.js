@@ -6,12 +6,18 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import "./LandingPage.css";
+import { useEffect } from "react";
+import { useFormContext } from "../../../states/Global State/Form State/FormState";
 import { useNavigate } from "react-router-dom";
 function LandingPage() {
   const logoIcon = <FontAwesomeIcon icon={faHeartPulse} />;
   const locationIcon = <FontAwesomeIcon icon={faLocationPin} />;
   const contactIcon = <FontAwesomeIcon icon={faUser} />;
   const navigate = useNavigate();
+  const {resetFormData}=useFormContext();
+  useEffect(() => {
+    resetFormData()
+  },[])
   return (
     <div className="landing-container">
       <div className="landing-header" data-aos="fade-down">
@@ -20,7 +26,7 @@ function LandingPage() {
           <div>Zencare</div>
         </div>
         <div>
-          <button onClick={() => navigate("signup")}>Register</button>
+          <button onClick={() => navigate("newpatient")}>Register</button>
         </div>
       </div>
       <div className="landing-body">

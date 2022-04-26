@@ -1,8 +1,19 @@
 import { useFormContext } from "./../states/Global State/Form State/FormState.js";
-export const useInfo = (entity) => {
+export const useInfo = (entity, role) => {
   const { formData, handleInput } = useFormContext();
   const entities = {
-    medicalRecord:{
+    medicalRecord: {
+      buttons:
+        role === "doctor"
+          ? [
+              {
+                value: "Delete",
+                handleClick: null,
+                type: "red",
+                isDisabled: false,
+              },
+            ]
+          : [],
       inputBoxes: [
         {
           label: "Medical Record ID",
@@ -27,7 +38,9 @@ export const useInfo = (entity) => {
           type: "text",
           name: "patientName",
           placeholder: "Patient Name",
-          value: formData.patient?formData.patient.patientName:formData.patient,
+          value: formData.patient
+            ? formData.patient.patientName
+            : formData.patient,
           handleInput: handleInput,
           isDisabled: true,
         },
@@ -36,12 +49,12 @@ export const useInfo = (entity) => {
           type: "text",
           name: "doctorName",
           placeholder: "Doctor Name",
-          value: formData.doctor?formData.doctor.doctorName:formData.doctor,
+          value: formData.doctor ? formData.doctor.doctorName : formData.doctor,
           handleInput: handleInput,
           isDisabled: true,
         },
       ],
-      textareas:[
+      textareas: [
         {
           label: "Medical Record Diagnosis",
           name: "medicalRecordDiagnosis",
@@ -58,11 +71,39 @@ export const useInfo = (entity) => {
           handleInput: handleInput,
           isDisabled: true,
         },
-
-      ]
-
+      ],
     },
     appointment: {
+      buttons:
+        role === "patient"
+          ? [
+              {
+                value: "Delete",
+                handleClick: null,
+                type: "red",
+                isDisabled: false,
+              },
+            ]
+          : [
+              {
+                value: "Accept",
+                handleClick: null,
+                type: "green",
+                isDisabled: false,
+              },
+              {
+                value: "Reject",
+                handleClick: null,
+                type: "yellow",
+                isDisabled: false,
+              },
+              {
+                value: "Delete",
+                handleClick: null,
+                type: "red",
+                isDisabled: false,
+              },
+            ],
       inputBoxes: [
         {
           label: "Appointment ID",
@@ -73,7 +114,7 @@ export const useInfo = (entity) => {
           handleInput: handleInput,
           isDisabled: true,
         },
-        
+
         {
           label: "Appointment Date",
           type: "date",
@@ -97,17 +138,21 @@ export const useInfo = (entity) => {
           type: "text",
           name: "patientName",
           placeholder: "Patient Name",
-          value: formData.patient?formData.patient.patientName:formData.patient,
+          value: formData.patient
+            ? formData.patient.patientName
+            : formData.patient,
           handleInput: handleInput,
           isDisabled: true,
         },
-        
+
         {
           label: "Patient Age",
-          type: "text",
+          type: "number",
           name: "patientAge",
           placeholder: "Patient Age",
-          value: formData.patient?formData.patient.patientAge:formData.patient,
+          value: formData.patient
+            ? formData.patient.patientAge
+            : formData.patient,
           handleInput: handleInput,
           isDisabled: true,
         },
@@ -116,7 +161,7 @@ export const useInfo = (entity) => {
           type: "text",
           name: "doctorName",
           placeholder: "Doctor Name",
-          value: formData.doctor?formData.doctor.doctorName:formData.doctor,
+          value: formData.doctor ? formData.doctor.doctorName : formData.doctor,
           handleInput: handleInput,
           isDisabled: true,
         },
@@ -133,6 +178,17 @@ export const useInfo = (entity) => {
       ],
     },
     patient: {
+      buttons:
+        role === "admin"
+          ? [
+              {
+                value: "Delete",
+                handleClick: null,
+                type: "red",
+                isDisabled: false,
+              },
+            ]
+          : [],
       inputBoxes: [
         {
           label: "Patient ID",
@@ -172,7 +228,7 @@ export const useInfo = (entity) => {
         },
         {
           label: "Patient Age",
-          type: "text",
+          type: "number",
           name: "patientAge",
           placeholder: "Patient Age",
           value: formData.patientAge,
@@ -188,7 +244,6 @@ export const useInfo = (entity) => {
           handleInput: handleInput,
           isDisabled: true,
         },
-       
       ],
       textareas: [
         {
@@ -202,6 +257,23 @@ export const useInfo = (entity) => {
       ],
     },
     doctor: {
+      buttons:
+        role === "admin"
+          ? [
+              {
+                value: "Invalidate",
+                handleClick: null,
+                type: "yellow",
+                isDisabled: false,
+              },
+              {
+                value: "Delete",
+                handleClick: null,
+                type: "red",
+                isDisabled: false,
+              },
+            ]
+          : [],
       inputBoxes: [
         {
           label: "Doctor ID",
@@ -266,8 +338,6 @@ export const useInfo = (entity) => {
           handleInput: handleInput,
           isDisabled: true,
         },
-
-        
       ],
       textareas: [
         {
@@ -319,7 +389,6 @@ export const useInfo = (entity) => {
           handleInput: handleInput,
           isDisabled: true,
         },
-        
       ],
     },
   };

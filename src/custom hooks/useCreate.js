@@ -1,45 +1,68 @@
 import { useFormContext } from "./../states/Global State/Form State/FormState.js";
-export const useCreate = (entity) => {
+export const useCreate = (entity, role) => {
   const { formData, handleInput } = useFormContext();
-
   const data = {
     appointment: {
-        inputBoxes:[{
-            label: "Appointment Date",
-            type: "date",
-            name: "appointmentDate",
-            placeholder: "Appointment Date",
-            value: formData.appointmentDate,
-            handleInput: handleInput,
-            isDisabled: false,
-          },
-          {
-            label: "Appointment Status",
-            type: "text",
-            name: "appointmentStatus",
-            placeholder: "Appointment Status",
-            value: formData.appointmentStatus,
-            handleInput: handleInput,
-            isDisabled: false,
-          },
-        ],
-        selectboxes: [{
-            label:"Choose Doctor", 
-            name:"doctorID",
-            value:formData.doctorID,
-            handleInput: handleInput,
-            options:formData.doctorList
-        }],
-        textareas: [{
-            label: "Health Problem",
-            name: "healthProblem",
-            placeholder: "Health Problem",
-            value: formData.healthProblem,
-            handleInput: handleInput,
-            isDisabled: false,
-          },]
+      buttons: [
+        {
+          value:"Save",
+          action:"post",
+          handleClick: null,
+          type: "purple",
+          isDisabled: false,
+          
+        },
+      ],
+      inputBoxes: [
+        {
+          label: "Appointment Date",
+          type: "date",
+          name: "appointmentDate",
+          placeholder: "Appointment Date",
+          value: formData.appointmentDate,
+          handleInput: handleInput,
+          isDisabled: false,
+        },
+        {
+          label: "Appointment Status",
+          type: "text",
+          name: "appointmentStatus",
+          placeholder: "Appointment Status",
+          value: formData.appointmentStatus,
+          handleInput: handleInput,
+          isDisabled: false,
+        },
+      ],
+      selectboxes: [
+        {
+          label: "Choose Doctor",
+          name: "doctorID",
+          value: formData.doctorID,
+          handleInput: handleInput,
+          options: formData.doctorList,
+        },
+      ],
+      textareas: [
+        {
+          label: "Health Problem",
+          name: "healthProblem",
+          placeholder: "Health Problem",
+          value: formData.healthProblem,
+          handleInput: handleInput,
+          isDisabled: false,
+        },
+      ],
     },
     doctor: {
+      buttons: [
+        {
+          value:"Save",
+          action:"post",
+          handleClick: null,
+          type: "purple",
+          isDisabled: false,
+        },
+      ],
       inputBoxes: [
         {
           label: "Doctor Name",
@@ -118,6 +141,15 @@ export const useCreate = (entity) => {
       ],
     },
     medicalRecord: {
+      buttons: [
+        {
+          value:"Save",
+          action:"post",
+          handleClick: null,
+          type: "purple",
+          isDisabled: false,
+        },
+      ],
       inputBoxes: [
         {
           label: "Medical Record Date",
@@ -158,6 +190,15 @@ export const useCreate = (entity) => {
       ],
     },
     admin: {
+      buttons: [
+        {
+          value:"Save",
+          action:"post",
+          handleClick: null,
+          type: "purple",
+          isDisabled: false,
+        },
+      ],
       textareas: [],
       inputBoxes: [
         {

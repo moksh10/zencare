@@ -1,21 +1,23 @@
 import { createContext, useState, useContext } from "react";
 const FormContext = createContext();
 export const FormProvider = ({ children }) => {
-  const [formData, setFormData] = useState({});
+  const initialState = {};
+  const [formData, setFormData] = useState(initialState);
   const handleInput = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
-  function resetFormData() {
-    const data = {};
-    setFormData({ ...data });
+  const resetFormData = () => {
+    setFormData({ ...initialState });
   };
 
   return (
-    <FormContext.Provider
-      value={{ formData, resetFormData, handleInput, setFormData }}
-    >
-      {children}
-    </FormContext.Provider>
+    <>
+      <FormContext.Provider
+        value={{ formData, resetFormData, handleInput, setFormData }}
+      >
+        {children}
+      </FormContext.Provider>
+    </>
   );
 };
 export const useFormContext = () => useContext(FormContext);

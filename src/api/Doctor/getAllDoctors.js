@@ -4,7 +4,7 @@ import handleError from "../Error/handleError.js"
 
 async function getAllDoctors(...args) {
     const data = await API.get('/doctor').catch(handleError);
-    const newData= data.data?{success:true,data:data.data.data}:data.error   
+    const newData= data.data?{success:true,data:data.data.data, message: data.data.message}:data.error   
     if(args.includes("admin"))
     {
         return newData

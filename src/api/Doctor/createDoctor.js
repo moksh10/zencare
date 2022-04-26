@@ -2,9 +2,9 @@ import API from "../Base API/API.js";
 
 import handleError from "../Error/handleError.js"
 
-async function createDoctor(doctor) {
+async function createDoctor(doctor,...args) {
     const data = await API.post('/doctor', doctor).catch(handleError);
-    return data.data?{success:true,data:data.data.data}:data.error   
+    return data.data?{success:true,data:data.data.data, message: data.data.message}:data.error   
 
 }
 // const doctor = {

@@ -35,7 +35,7 @@ function Routes() {
           }
         />
         <Route
-          path="/signup"
+          path="/newpatient"
           element={
             <Suspense fallback={<Loading />}>
               <Signup />

@@ -4,6 +4,14 @@ export const useProfile = (role) => {
 
   const profile = {
     patient: {
+      buttons: [
+        {
+          value: "Save",
+          handleClick: null,
+          type: "purple",
+          isDisabled: false,
+        },
+      ],
       inputBoxes: [
         {
           label: "Patient ID",
@@ -81,6 +89,14 @@ export const useProfile = (role) => {
       ],
     },
     doctor: {
+      buttons: [
+        {
+          value: "Save",
+          handleClick: null,
+          type: "purple",
+          isDisabled: false,
+        },
+      ],
       inputBoxes: [
         {
           label: "Doctor ID",
@@ -168,6 +184,14 @@ export const useProfile = (role) => {
       ],
     },
     admin: {
+      buttons: [
+        {
+          value: "Save",
+          handleClick: null,
+          type: "purple",
+          isDisabled: false,
+        },
+      ],
       textareas: [],
       inputBoxes: [
         {

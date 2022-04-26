@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
 import { useAuth } from "../../../states/Global State/Auth State/AuthState.js";
-import Container from "../../Generic/Container/Container.js";
 import { useErrorContext } from "../../../states/Global State/Error Message/ErrorMessage.js";
 import { useSuccessContext } from "../../../states/Global State/Success Message/SuccessMessage.js";
 import { useLoadingContext } from "../../../states/Global State/Loading State/Loading.js";
@@ -10,6 +8,10 @@ import { getAllMap } from "./../../../api map/getAllMap.js";
 import { useQuery } from "./../../../custom hooks/useQuery.js";
 import { filterTableData } from "./../../../util/filterTableData.js";
 import { getDate } from "./../../../util/getDate.js";
+import { getMap } from "../../../api map/getMap.js";
+import Spinner from "./../../Generic/Spinner/Spinner.js";
+import { useState,useEffect, lazy, Suspense } from "react";
+const Container = lazy(() => import("../../Generic/Container/Container.js"));
 function ListBox() {
   const { user } = useAuth();
   const [tableData, setTableData] = useState([]);
@@ -76,6 +78,7 @@ function ListBox() {
   }, [location]);
   return (
     <>
+    <Suspense fallback={<Spinner/>}>
       <Container
         heading={heading}
         title={title}
@@ -84,6 +87,7 @@ function ListBox() {
         tableData={tableData}
         tableButtons={tableButtons}
       />
+      </Suspense>
     </>
   );
 }
