@@ -1,6 +1,5 @@
 import { useAuth } from "../../../states/Global State/Auth State/AuthState.js";
 import { useErrorContext } from "../../../states/Global State/Error Message/ErrorMessage.js";
-import { useSuccessContext } from "../../../states/Global State/Success Message/SuccessMessage.js";
 import { useLoadingContext } from "../../../states/Global State/Loading State/Loading.js";
 import { useFormContext } from "../../../states/Global State/Form State/FormState.js";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -8,9 +7,8 @@ import { getAllMap } from "./../../../api map/getAllMap.js";
 import { useQuery } from "./../../../custom hooks/useQuery.js";
 import { filterTableData } from "./../../../util/filterTableData.js";
 import { getDate } from "./../../../util/getDate.js";
-import { getMap } from "../../../api map/getMap.js";
 import Spinner from "./../../Generic/Spinner/Spinner.js";
-import { useState,useEffect, lazy, Suspense } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 const Container = lazy(() => import("../../Generic/Container/Container.js"));
 function ListBox() {
   const { user } = useAuth();
@@ -18,7 +16,6 @@ function ListBox() {
   const { setIsLoading } = useLoadingContext();
   const { showError } = useErrorContext();
   const { formData, resetFormData } = useFormContext();
-  const { showSuccess } = useSuccessContext();
   const location = useLocation();
   const navigate = useNavigate();
   const entity = location.pathname.split("/")[2];
@@ -28,14 +25,13 @@ function ListBox() {
   const fetch = getAllMap(entity, role);
   const query = useQuery(entity, role);
   const queryInputBoxes = query ? query.inputBoxes : [];
-  const queryButtons = query ? query.buttons : [];
-  function click(id)
-  { 
-    navigate(""+id)
+  function click(id) {
+    navigate("" + id);
   }
   const tableButtons = [
-    { value: "VIEW", handleClick:click, type: "blue", isDisabled: false },
+    { value: "View", handleClick: click, type: "blue", isDisabled: false },
   ];
+  
   function getData() {
     if (entity === "medicalRecord" && role === "admin") {
       return;
@@ -49,6 +45,7 @@ function ListBox() {
       if (formData.patientID) {
         resource = formData.patientID;
       } else {
+        showError("Please enter patient ID");
         return;
       }
     }
@@ -67,6 +64,19 @@ function ListBox() {
       setIsLoading(false);
     });
   }
+  const queryButtons =
+    (entity === "medicalRecord" && role === "doctor") ||
+    entity === "appointment"
+      ? [
+          {
+            type: "blue",
+            value: "Search",
+            isDisabled: false,
+            handleClick: getData,
+          },
+        ]
+      : [];
+
   useEffect(() => {
     getData();
     return resetFormData;
@@ -78,15 +88,15 @@ function ListBox() {
   }, [location]);
   return (
     <>
-    <Suspense fallback={<Spinner/>}>
-      <Container
-        heading={heading}
-        title={title}
-        queryInputBoxes={queryInputBoxes}
-        queryButtons={queryButtons}
-        tableData={tableData}
-        tableButtons={tableButtons}
-      />
+      <Suspense fallback={<Spinner />}>
+        <Container
+          heading={heading}
+          title={title}
+          queryInputBoxes={queryInputBoxes}
+          queryButtons={queryButtons}
+          tableData={tableData}
+          tableButtons={tableButtons}
+        />
       </Suspense>
     </>
   );

@@ -1,52 +1,50 @@
 import "./../Button/button.css";
-import { postMap } from "./../../../api map/postMap";
+import { putMap } from "./../../../api map/putMap";
 import { useFormContext } from "./../../../states/Global State/Form State/FormState.js";
 import { useLoadingContext } from "./../../../states/Global State/Loading State/Loading.js";
 import { useErrorContext } from "./../../../states/Global State/Error Message/ErrorMessage.js";
 import { useSuccessContext } from "./../../../states/Global State/Success Message/SuccessMessage.js";
-import { useNavigate, useLocation } from "react-router-dom";
-import { extractFormID } from "./../../../util/extractFormID";
-import { extractFormData } from "./../../../util/extractFormData";
+import { useLocation } from "react-router-dom";
+import { extractUpdateFormData } from "./../../../util/extractUpdateFormData";
 import { validateFormData } from "./../../../util/validateFormData";
-function PostButton({ value, handleClick, type, isDisabled }) {
-  const { formData } = useFormContext();
+function AppointmentButton({ value, handleClick, type, isDisabled }) {
+  const { formData, setFormData } = useFormContext();
   const { showError } = useErrorContext();
   const { showSuccess } = useSuccessContext();
   const { setIsLoading } = useLoadingContext();
   const location = useLocation();
-  const navigate = useNavigate();
   const entity =
     location.pathname.split("/").length >= 3
-      ? location.pathname.split("/")[2].slice(3)
-      : location.pathname.split("/")[1].slice(3);
+      ? location.pathname.split("/")[2]
+      : location.pathname.split("/")[1];
 
   function click() {
-    const post = postMap(entity);
-    const data = extractFormData(formData, entity);
+    if (entity !== "appointment") {
+      return;
+    }
+    const put = putMap(entity);
+    const data = extractUpdateFormData(formData, entity);
     validateFormData(data, entity).then((valid) => {
+      if (value === "Done") {
+        data.appointmentStatus = "Completed";
+      }
+      if (value === "Accept") {
+        data.appointmentStatus = "Confirmed";
+      } else if (value === "Reject") {
+        data.appointmentStatus = "Rejected";
+      }
       if (!valid.error) {
-        const id = extractFormID(formData, entity);
-        if (entity === "medicalRecord" || entity === "appointment") {
-          if (!id) {
-            showError("Please choose option");
-            return;
-          }
-        }
         setIsLoading(true);
-        post(data, id).then((response) => {
+        put(data).then((response) => {
           if (response.success) {
             const message = response.message;
             setIsLoading(false);
+            setFormData(response.data);
             showSuccess(message);
-            if (entity === "patient") {
-              setTimeout(() => navigate("/login"), 2500);
-              return;
-            }
-            setTimeout(() => navigate("/app/" + entity), 2500);
           } else {
             showError(response.message);
+            setIsLoading(false);
           }
-          setIsLoading(false);
           return;
         });
       } else {
@@ -60,4 +58,4 @@ function PostButton({ value, handleClick, type, isDisabled }) {
     </button>
   );
 }
-export default PostButton;
+export default AppointmentButton;

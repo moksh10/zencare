@@ -14,14 +14,6 @@ export const useQuery = (entity, role) => {
           value: formData.date,
           handleInput: handleInput,
           isDisabled: false,
-        }
-      ],
-      buttons: [
-        {
-          type: "blue",
-          value: "Search",
-          isDisabled: false,
-          handleClick: null,
         },
       ],
     },
@@ -35,14 +27,6 @@ export const useQuery = (entity, role) => {
           value: formData.patientID,
           handleInput: handleInput,
           isDisabled: false,
-        },
-      ],
-      buttons: [
-        {
-          type: "blue",
-          value: "Search",
-          isDisabled: false,
-          handleClick: null,
         },
       ],
     },

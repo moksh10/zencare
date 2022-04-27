@@ -10,6 +10,7 @@ export const useProfile = (role) => {
           handleClick: null,
           type: "purple",
           isDisabled: false,
+          action: "put",
         },
       ],
       inputBoxes: [
@@ -95,6 +96,7 @@ export const useProfile = (role) => {
           handleClick: null,
           type: "purple",
           isDisabled: false,
+          action: "put",
         },
       ],
       inputBoxes: [
@@ -190,6 +192,7 @@ export const useProfile = (role) => {
           handleClick: null,
           type: "purple",
           isDisabled: false,
+          action: "put",
         },
       ],
       textareas: [],

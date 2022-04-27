@@ -28,7 +28,7 @@ export const useCreate = (entity, role) => {
           type: "text",
           name: "appointmentStatus",
           placeholder: "Appointment Status",
-          value: formData.appointmentStatus,
+          value: "Pending",
           handleInput: handleInput,
           isDisabled: false,
         },

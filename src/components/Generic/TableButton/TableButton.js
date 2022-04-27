@@ -1,4 +1,4 @@
-import "./tablebutton.css";
+import "./../Button/button.css";
 function TableButton({ id, value, handleClick, type, isDisabled }) {
   function click() {
     return handleClick(id);

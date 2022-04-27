@@ -17,17 +17,20 @@ export const filterTableData = (entity, data) => {
     "patientName",
     "patientGender",
     "patientAge",
+    "patientEmail"
   ]);
   const appointment = new Set([
     "appointmentID",
     "doctorName",
     "patientName",
     "appointmentStatus",
+    "healthProblem"
   ]);
   const medicalRecord = new Set([
     "medicalRecordID",
     "medicalRecordDate",
     "patientName",
+    "medicalRecordDiagnosis",
     "doctorName",
   ]);
   const filterMap = {

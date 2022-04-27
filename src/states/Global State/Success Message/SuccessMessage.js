@@ -10,7 +10,7 @@ export const SuccessProvider = ({ children }) => {
     setTimeout(() => {
       setSuccessMessage("");
       setHasSuccess(false);
-    }, 4000);
+    }, 3600);
   }
 
   return (

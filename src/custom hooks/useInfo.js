@@ -11,6 +11,7 @@ export const useInfo = (entity, role) => {
                 handleClick: null,
                 type: "red",
                 isDisabled: false,
+                action: "delete",
               },
             ]
           : [],
@@ -82,6 +83,7 @@ export const useInfo = (entity, role) => {
                 handleClick: null,
                 type: "red",
                 isDisabled: false,
+                action: "delete",
               },
             ]
           : [
@@ -90,18 +92,29 @@ export const useInfo = (entity, role) => {
                 handleClick: null,
                 type: "green",
                 isDisabled: false,
+                action: "appointment",
               },
               {
                 value: "Reject",
                 handleClick: null,
                 type: "yellow",
                 isDisabled: false,
+                action: "appointment",
               },
+              {
+                value: "Done",
+                handleClick: null,
+                type: "blue",
+                isDisabled: false,
+                action: "appointment",
+              },
+
               {
                 value: "Delete",
                 handleClick: null,
                 type: "red",
                 isDisabled: false,
+                action: "delete",
               },
             ],
       inputBoxes: [
@@ -186,6 +199,7 @@ export const useInfo = (entity, role) => {
                 handleClick: null,
                 type: "red",
                 isDisabled: false,
+                action: "delete",
               },
             ]
           : [],
@@ -265,12 +279,14 @@ export const useInfo = (entity, role) => {
                 handleClick: null,
                 type: "yellow",
                 isDisabled: false,
+                action: "invalidate",
               },
               {
                 value: "Delete",
                 handleClick: null,
                 type: "red",
                 isDisabled: false,
+                action: "delete",
               },
             ]
           : [],
