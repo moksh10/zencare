@@ -2,14 +2,11 @@ import "./../Button/button.css";
 import { deleteMap } from "./../../../api map/deleteMap.js";
 import { useFormContext } from "./../../../states/Global State/Form State/FormState.js";
 import { useLoadingContext } from "./../../../states/Global State/Loading State/Loading.js";
-import { useErrorContext } from "./../../../states/Global State/Error Message/ErrorMessage.js";
-import { useSuccessContext } from "./../../../states/Global State/Success Message/SuccessMessage.js";
 import { useLocation,useNavigate } from "react-router-dom";
 import { extractIDByEntity } from "./../../../util/extractIDByEntity";
+import { toast } from "react-toastify";
 function PutButton({ value, handleClick, type, isDisabled }) {
   const { formData } = useFormContext();
-  const { showError } = useErrorContext();
-  const { showSuccess } = useSuccessContext();
   const { setIsLoading } = useLoadingContext();
   const location = useLocation();
   const navigate = useNavigate();
@@ -22,7 +19,7 @@ function PutButton({ value, handleClick, type, isDisabled }) {
     const del = deleteMap(entity);
     const id = extractIDByEntity(formData, entity);
     if (!id) {
-      showError("Resource could not be deleted");
+      toast.error("Resource could not be deleted");
       return;
     }
     setIsLoading(true);
@@ -30,10 +27,10 @@ function PutButton({ value, handleClick, type, isDisabled }) {
       if (response.success) {
         const message = response.message;
         setIsLoading(false);
-        showSuccess(message);
+        toast.success(message);
         setTimeout(() => navigate("/app/" + entity), 2000);
       } else {
-        showError(response.message);
+        toast.error(response.message);
       }
       setIsLoading(false);
     });

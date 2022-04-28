@@ -4,13 +4,10 @@ import Button from "../../Generic/Button/Button";
 import InputBox from "../../Generic/InputBox/InputBox";
 import { authMap } from "../../../api map/authMap";
 import { useLoadingContext } from "./../../../states/Global State/Loading State/Loading.js";
-import { useErrorContext } from "./../../../states/Global State/Error Message/ErrorMessage.js";
-import { useSuccessContext } from "./../../../states/Global State/Success Message/SuccessMessage.js";
+import { toast } from "react-toastify";
 import "./loginPage.css";
 function LoginPage() {
   const navigate = useNavigate();
-  const { showError } = useErrorContext();
-  const { showSuccess } = useSuccessContext();
   const { setIsLoading } = useLoadingContext();
   const [loginData, setLoginData] = useState({
     email: "",
@@ -28,20 +25,20 @@ function LoginPage() {
       loginData.password === "" ||
       loginData.role === ""
     ) {
-      showError("Please fill all credentials to login");
+     toast.error("Please fill all credentials to login");
       return;
     }
     setIsLoading(true);
     login(loginData).then((response) => {
       if (response.success) {
         setIsLoading(false);
-        showSuccess(response.message);
+        toast.success(response.message);
         setTimeout(() => {
           navigate("/app/profile");
-        }, 2000);
+        }, 1500);
       } else {
         setIsLoading(false);
-        showError(response.message);
+        toast.error(response.message);
       }
     });
   };
@@ -49,7 +46,7 @@ function LoginPage() {
   return (
     <div className="login-body">
       <div className="login-container">
-        <h1>Zencare</h1>
+        <h1 onClick={()=>navigate("/")}>Zencare</h1>
 
         <b>Hello! Let's get started!</b>
         <p>Sign in to continiue.</p>

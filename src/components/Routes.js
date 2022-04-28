@@ -2,8 +2,9 @@ import { lazy, Suspense } from "react";
 import { Route, Routes as Router } from "react-router-dom";
 import InfoBox from "./Entity/InfoBox/InfoBox.js";
 import Spinner from "./Generic/Spinner/Spinner.js";
-import AlertBox from "./Generic/AlertBox/AlertBox.js";
 import Loading from "./Generic/Loading/Loading.js";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ProtectedRoute from "./Generic/ProtectedRoute/ProtectedRoute.js";
 const Login = lazy(() => import("./Pages/Login Page/LoginPage.js"));
 const Signup = lazy(() => import("./Pages/Signup Page/Signup.js"));
@@ -17,7 +18,7 @@ function Routes() {
   return (
     <>
       <Spinner />
-      <AlertBox />
+      <ToastContainer limit={5} autoClose={2500} closeOnClick={true} pauseOnHover={false} theme={"dark"} />
       <Router>
         <Route
           path="/"

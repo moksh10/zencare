@@ -2,14 +2,11 @@ import "./../Button/button.css";
 import { invalidateMap } from "./../../../api map/invalidateMap";
 import { useFormContext } from "./../../../states/Global State/Form State/FormState.js";
 import { useLoadingContext } from "./../../../states/Global State/Loading State/Loading.js";
-import { useErrorContext } from "./../../../states/Global State/Error Message/ErrorMessage.js";
-import { useSuccessContext } from "./../../../states/Global State/Success Message/SuccessMessage.js";
 import { useLocation, useNavigate } from "react-router-dom";
 import { extractIDByEntity } from "./../../../util/extractIDByEntity";
+import { toast } from "react-toastify";
 function InvalidateButton({ value, handleClick, type, isDisabled }) {
   const { formData } = useFormContext();
-  const { showError } = useErrorContext();
-  const { showSuccess } = useSuccessContext();
   const  navigate  = useNavigate();
   const { setIsLoading } = useLoadingContext();
   const location = useLocation();
@@ -25,7 +22,7 @@ function InvalidateButton({ value, handleClick, type, isDisabled }) {
     const put = invalidateMap(entity);
     const id = extractIDByEntity(formData, entity);
     if (id === null) {
-      showError("Resource cannot be invalidated");
+      toast.error("Resource cannot be invalidated")
       return;
     }
     setIsLoading(true);
@@ -33,10 +30,10 @@ function InvalidateButton({ value, handleClick, type, isDisabled }) {
       if (response.success) {
         const message = response.message;
         setIsLoading(false);
-        showSuccess(message);
+        toast.success(message);
         setTimeout(() => navigate("/app/" + entity), 2000);
       } else {
-        showError(response.message);
+        toast.error(response.message);
         setIsLoading(false);
       }
     });

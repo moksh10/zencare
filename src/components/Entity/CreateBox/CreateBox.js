@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useAuth } from "../../../states/Global State/Auth State/AuthState.js";
-import { useErrorContext } from "../../../states/Global State/Error Message/ErrorMessage.js";
 import { useLoadingContext } from "../../../states/Global State/Loading State/Loading.js";
 import { useFormContext } from "../../../states/Global State/Form State/FormState.js";
 import { useLocation } from "react-router-dom";
@@ -9,11 +8,11 @@ import { getAllMap } from "../../../api map/getAllMap.js";
 import { filterSelectData } from "./../../../util/filterSelectData.js";
 import Spinner from "./../../Generic/Spinner/Spinner.js";
 import { useEffect, lazy, Suspense } from "react";
+import { toast } from "react-toastify";
 const Container = lazy(() => import("../../Generic/Container/Container.js"));
 function CreateBox() {
   const { user } = useAuth();
   const { setIsLoading } = useLoadingContext();
-  const { showError } = useErrorContext();
   const {  resetFormData, setFormData } = useFormContext();
   const location = useLocation();
   const role = user.role;
@@ -39,7 +38,7 @@ function CreateBox() {
         const tempData = { doctorList: filteredSelectData };
         setFormData({ ...tempData });
       } else {
-        showError(response.message);
+        toast.error(response.message);
       }
       setIsLoading(false);
     });

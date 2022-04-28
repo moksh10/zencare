@@ -1,17 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useAuth } from "../../../states/Global State/Auth State/AuthState.js";
-import { useErrorContext } from "../../../states/Global State/Error Message/ErrorMessage.js";
 import { useLoadingContext } from "../../../states/Global State/Loading State/Loading.js";
 import { useProfile } from "../../../custom hooks/useProfile.js";
 import { useFormContext } from "../../../states/Global State/Form State/FormState.js";
 import { getMap } from "./../../../api map/getMap.js";
 import Spinner from "./../../Generic/Spinner/Spinner.js";
 import { useEffect, lazy, Suspense } from "react";
+import { toast } from "react-toastify";
 const Container = lazy(() => import("../../Generic/Container/Container.js"));
 function Profile() {
   const { user } = useAuth();
   const { setIsLoading } = useLoadingContext();
-  const { showError } = useErrorContext();
   const { resetFormData, setFormData } = useFormContext();
   const role = user.role;
   const data = useProfile(role);
@@ -26,7 +25,7 @@ function Profile() {
         const data = response.data;
         setFormData(data);
       } else {
-        showError(response.message);
+        toast.error(response.message);
       }
       setIsLoading(false);
     });

@@ -2,15 +2,12 @@ import "./../Button/button.css";
 import { putMap } from "./../../../api map/putMap";
 import { useFormContext } from "./../../../states/Global State/Form State/FormState.js";
 import { useLoadingContext } from "./../../../states/Global State/Loading State/Loading.js";
-import { useErrorContext } from "./../../../states/Global State/Error Message/ErrorMessage.js";
-import { useSuccessContext } from "./../../../states/Global State/Success Message/SuccessMessage.js";
 import { useLocation } from "react-router-dom";
 import { extractUpdateFormData } from "./../../../util/extractUpdateFormData";
 import { validateFormData } from "./../../../util/validateFormData";
+import { toast } from "react-toastify";
 function AppointmentButton({ value, handleClick, type, isDisabled }) {
   const { formData, setFormData } = useFormContext();
-  const { showError } = useErrorContext();
-  const { showSuccess } = useSuccessContext();
   const { setIsLoading } = useLoadingContext();
   const location = useLocation();
   const entity =
@@ -40,15 +37,15 @@ function AppointmentButton({ value, handleClick, type, isDisabled }) {
             const message = response.message;
             setIsLoading(false);
             setFormData(response.data);
-            showSuccess(message);
+            toast.success(message);
           } else {
-            showError(response.message);
+            toast.error(response.message);
             setIsLoading(false);
           }
           return;
         });
       } else {
-        showError(valid.message);
+        toast.error(valid.message)
       }
     });
   }

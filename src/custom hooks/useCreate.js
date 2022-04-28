@@ -30,7 +30,7 @@ export const useCreate = (entity, role) => {
           placeholder: "Appointment Status",
           value: "Pending",
           handleInput: handleInput,
-          isDisabled: false,
+          isDisabled: true,
         },
       ],
       selectboxes: [

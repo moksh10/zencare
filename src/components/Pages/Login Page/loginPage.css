@@ -26,6 +26,7 @@
   font-family: "Comfortaa", cursive;
   margin: 1.2vmin 7vmin 4.1vmin 0;
   letter-spacing: 0;
+  cursor: pointer;
 }
 .login-container > b {
   font-size: 2.9vmin;

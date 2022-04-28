@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useAuth } from "../../../states/Global State/Auth State/AuthState.js";
-import { useErrorContext } from "../../../states/Global State/Error Message/ErrorMessage.js";
 import { useLoadingContext } from "../../../states/Global State/Loading State/Loading.js";
 import { useFormContext } from "../../../states/Global State/Form State/FormState.js";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -10,12 +9,12 @@ import { filterTableData } from "./../../../util/filterTableData.js";
 import { getDate } from "./../../../util/getDate.js";
 import Spinner from "./../../Generic/Spinner/Spinner.js";
 import { useState, useEffect, lazy, Suspense } from "react";
+import { toast } from "react-toastify";
 const Container = lazy(() => import("../../Generic/Container/Container.js"));
 function ListBox() {
   const { user } = useAuth();
   const [tableData, setTableData] = useState([]);
   const { setIsLoading } = useLoadingContext();
-  const { showError } = useErrorContext();
   const { formData, resetFormData } = useFormContext();
   const location = useLocation();
   const navigate = useNavigate();
@@ -46,7 +45,6 @@ function ListBox() {
       if (formData.patientID) {
         resource = formData.patientID;
       } else {
-        showError("Please enter patient ID");
         return;
       }
     }
@@ -60,7 +58,7 @@ function ListBox() {
         const filteredTableData = filterTableData(entity, data);
         setTableData([...filteredTableData]);
       } else {
-        showError(response.message);
+        toast.error(response.message);
       }
       setIsLoading(false);
     });
