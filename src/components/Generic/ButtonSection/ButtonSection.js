@@ -4,6 +4,7 @@ import PutButton from "../PutButton/PutButton.js";
 import DeleteButton from "../DeleteButton/DeleteButton.js";
 import AppointmentButton from "../AppointmentButton/AppointmentButton.js";
 import InvalidateButton from "../InvalidateButton/InvalidateButton.js";
+import LogoutButton from "./../LogoutButton/LogoutButton.js";
 import "./buttonsection.css";
 function ButtonSection({ buttons = [] }) {
   let button = <></>;
@@ -47,6 +48,14 @@ function ButtonSection({ buttons = [] }) {
               />
             ) : value.action === "invalidate" ? (
               <InvalidateButton
+                key={index}
+                type={value.type}
+                handleClick={value.handleClick}
+                isDisabled={value.isDisabled}
+                value={value.value}
+              />
+            ) : value.action === "logout" ? (
+              <LogoutButton
                 key={index}
                 type={value.type}
                 handleClick={value.handleClick}

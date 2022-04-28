@@ -12,6 +12,13 @@ export const useProfile = (role) => {
           isDisabled: false,
           action: "put",
         },
+        {
+          value:"Logout",
+          handleClick: null,
+          type:"yellow",
+          isDisabled: false,
+          action:"logout"
+        }
       ],
       inputBoxes: [
         {
@@ -98,6 +105,13 @@ export const useProfile = (role) => {
           isDisabled: false,
           action: "put",
         },
+        {
+          value:"Logout",
+          handleClick: null,
+          type:"yellow",
+          isDisabled: false,
+          action:"logout"
+        }
       ],
       inputBoxes: [
         {
@@ -194,6 +208,13 @@ export const useProfile = (role) => {
           isDisabled: false,
           action: "put",
         },
+        {
+          value:"Logout",
+          handleClick: null,
+          type:"yellow",
+          isDisabled: false,
+          action:"logout"
+        }
       ],
       textareas: [],
       inputBoxes: [

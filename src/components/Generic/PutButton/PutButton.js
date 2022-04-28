@@ -1,6 +1,7 @@
 import "./../Button/button.css";
 import { putMap } from "./../../../api map/putMap";
-import {useAuth} from "./../../../states/Global State/Auth State/AuthState.js"
+import { authMap } from "./../../../api map/authMap.js";
+import { useAuth } from "./../../../states/Global State/Auth State/AuthState.js";
 import { useFormContext } from "./../../../states/Global State/Form State/FormState.js";
 import { useLoadingContext } from "./../../../states/Global State/Loading State/Loading.js";
 import { useErrorContext } from "./../../../states/Global State/Error Message/ErrorMessage.js";
@@ -10,16 +11,16 @@ import { validateFormData } from "./../../../util/validateFormData";
 function PutButton({ value, handleClick, type, isDisabled }) {
   const { formData, setFormData } = useFormContext();
   const { showError } = useErrorContext();
-  const {user}=useAuth();
+  const { user, setUser } = useAuth();
   const { showSuccess } = useSuccessContext();
   const { setIsLoading } = useLoadingContext();
-  const entity =user.role
+  const entity = user.role;
   function click() {
     if (entity === "medicalRecord" || entity === "appointment") {
       return;
     }
-    console.log(entity)
     const put = putMap(entity);
+    const getUser = authMap("userInfo");
     const data = extractUpdateFormData(formData, entity);
     validateFormData(data, entity).then((valid) => {
       if (!valid.error) {
@@ -30,6 +31,13 @@ function PutButton({ value, handleClick, type, isDisabled }) {
             setIsLoading(false);
             setFormData(response.data);
             showSuccess(message);
+            getUser().then((response) => {
+              if (response.success) {
+                setUser({ ...response.data });
+              } else {
+                setUser({ userID: "", role: "", userName: "" });
+              }
+            });
           } else {
             showError(response.message);
             setIsLoading(false);

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useAuth } from "../../../states/Global State/Auth State/AuthState.js";
 import { useErrorContext } from "../../../states/Global State/Error Message/ErrorMessage.js";
 import { useLoadingContext } from "../../../states/Global State/Loading State/Loading.js";

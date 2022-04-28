@@ -4,6 +4,7 @@ import InfoBox from "./Entity/InfoBox/InfoBox.js";
 import Spinner from "./Generic/Spinner/Spinner.js";
 import AlertBox from "./Generic/AlertBox/AlertBox.js";
 import Loading from "./Generic/Loading/Loading.js";
+import ProtectedRoute from "./Generic/ProtectedRoute/ProtectedRoute.js";
 const Login = lazy(() => import("./Pages/Login Page/LoginPage.js"));
 const Signup = lazy(() => import("./Pages/Signup Page/Signup.js"));
 const Landing = lazy(() => import("./Pages/Landing Page/LandingPage.js"));
@@ -42,12 +43,15 @@ function Routes() {
             </Suspense>
           }
         />
+
         <Route
           path="/app"
           element={
-            <Suspense fallback={<Loading />}>
-              <MainApp />
-            </Suspense>
+            <ProtectedRoute>
+              <Suspense fallback={<Loading />}>
+                <MainApp />
+              </Suspense>
+            </ProtectedRoute>
           }
         >
           <Route
