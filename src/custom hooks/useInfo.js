@@ -102,7 +102,7 @@ export const useInfo = (entity, role) => {
                 action: "appointment",
               },
               {
-                value: "Done",
+                value: "Completed",
                 handleClick: null,
                 type: "blue",
                 isDisabled: false,

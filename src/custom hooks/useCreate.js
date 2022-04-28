@@ -77,7 +77,7 @@ export const useCreate = (entity, role) => {
           label: "Doctor Email",
           type: "text",
           name: "doctorEmail",
-          placeholder: "doctorEmail",
+          placeholder: "Doctor Email",
           value: formData.doctorEmail,
           handleInput: handleInput,
           isDisabled: false,
