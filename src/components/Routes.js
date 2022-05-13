@@ -18,7 +18,7 @@ function Routes() {
   return (
     <>
       <Spinner />
-      <ToastContainer limit={5} autoClose={2500} closeOnClick={true} pauseOnHover={false} theme={"dark"} />
+      <ToastContainer limit={5} autoClose={2500} closeOnClick={true} theme={"dark"} />
       <Router>
         <Route
           path="/"

@@ -5,6 +5,7 @@ import { useLoadingContext } from "./../../../states/Global State/Loading State/
 import { useNavigate, useLocation } from "react-router-dom";
 import { extractFormID } from "./../../../util/extractFormID";
 import { extractFormData } from "./../../../util/extractFormData";
+import { extractDate } from "./../../../util/extractDate";
 import { validateFormData } from "./../../../util/validateFormData";
 import { toast } from "react-toastify";
 function PostButton({ value, handleClick, type, isDisabled }) {
@@ -29,6 +30,21 @@ function PostButton({ value, handleClick, type, isDisabled }) {
           if (!id) {
             toast.error("Please select option");
             return;
+          }
+          const date = extractDate(formData, entity);
+          if (date) {
+            const newDate = new Date(date);
+            const today = new Date();
+            if (
+              !(
+                today.getDate() <= newDate.getDate() &&
+                today.getMonth() <= newDate.getMonth() &&
+                today.getYear() <= newDate.getYear()
+              )
+            ) {
+              toast.error("Please select a valid date");
+              return;
+            }
           }
         }
 

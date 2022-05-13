@@ -281,13 +281,6 @@ export const useInfo = (entity, role) => {
                 isDisabled: false,
                 action: "invalidate",
               },
-              {
-                value: "Delete",
-                handleClick: null,
-                type: "red",
-                isDisabled: false,
-                action: "delete",
-              },
             ]
           : [],
       inputBoxes: [
@@ -367,6 +360,15 @@ export const useInfo = (entity, role) => {
       ],
     },
     admin: {
+      buttons: [
+        {
+          value: "Delete",
+          handleClick: null,
+          type: "red",
+          isDisabled: false,
+          action: "delete",
+        }
+      ],
       textareas: [],
       inputBoxes: [
         {

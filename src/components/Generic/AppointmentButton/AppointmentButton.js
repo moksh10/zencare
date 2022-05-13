@@ -22,7 +22,7 @@ function AppointmentButton({ value, handleClick, type, isDisabled }) {
     const put = putMap(entity);
     const data = extractUpdateFormData(formData, entity);
     validateFormData(data, entity).then((valid) => {
-      if (value === "Done") {
+      if (value === "Completed") {
         data.appointmentStatus = "Completed";
       }
       if (value === "Accept") {

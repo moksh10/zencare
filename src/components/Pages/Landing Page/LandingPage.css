@@ -39,7 +39,7 @@
   border: 0;
   font-family: "Open Sans", sans-serif;
   cursor: pointer;
-  background-color: var(--blue);
+  background-color: #8353dd;
   transition: all 0.15s ease-in-out;
   color: white;
 }
@@ -83,7 +83,7 @@
   align-items: flex-start;
 }
 .landing-body > div:nth-child(even) > div:nth-child(even) > button {
-  background-color: var(--blue);
+  background-color: #8353dd;
   border: 0;
   color: white;
   cursor: pointer;
