@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://localhost:8084",
+  baseURL: "https://e-healthcare-management-system-server.onrender.com",
   withCredentials: true,
   credentials: "include",
   headers: {
